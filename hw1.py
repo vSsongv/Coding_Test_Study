@@ -31,5 +31,5 @@ def main(numOfClothes):
 	return int(numOfBox)
 
 if __name__ == "__main__":
-	numOfClothes = 102
+	numOfClothes = 21
 	print("최소 박스의 개수는 " + str(main(numOfClothes)) + "개 입니다.")
