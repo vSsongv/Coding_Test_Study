@@ -30,3 +30,28 @@ for i in range(2):
     else : answer.append(temp[0][0])
 
 print(answer)
+
+#아래는 지원님
+def solution(genres, plays):
+    answer = []
+    genres_count = {}
+    for i in range(len(genres)):
+        genre = genres[i]
+        play_count = plays[i]
+        if genre not in genres_count:
+            genres_count[genre] = {
+                "count": play_count,
+                "list": [(i, play_count)]
+            }
+        else:
+            genres_count[genre]["count"] += play_count
+            genres_count[genre]["list"].append((i, play_count))
+    for genre, play_count_list in sorted(genres_count.items(), key=lambda x:x[1]["count"], reverse=True) :
+        try:
+            play_count_list = sorted(play_count_list["list"], key=lambda x:x[1], reverse = True)[:2]
+        except:
+            play_count_list = sorted(play_count_list["list"], key=lambda x:x[1], reverse = True)
+        if len(play_count_list) == 2 and play_count_list[0][1]==play_count_list[1][1]:
+            play_count_list = sorted(play_count_list, key=lambda x:x[0])
+        answer.extend([index[0] for index in play_count_list])
+    return answer

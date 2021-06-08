@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="boxCounting_hw1">
-      <change afterPath="$PROJECT_DIR$/best_album.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="best_album-programmers" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +47,7 @@
       <updated>1622613202560</updated>
       <workItem from="1622613205849" duration="6000" />
       <workItem from="1622613214785" duration="1060000" />
-      <workItem from="1622615527866" duration="10706000" />
+      <workItem from="1622615527866" duration="11005000" />
     </task>
     <task id="LOCAL-00001" summary="prepare">
       <created>1622614360059</created>
@@ -74,7 +70,28 @@
       <option name="project" value="LOCAL" />
       <updated>1622622568150</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="best_album-programmers">
+      <created>1623117676456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1623117676456</updated>
+    </task>
+    <task id="LOCAL-00005" summary="best_album-programmers">
+      <created>1623117725936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623117725936</updated>
+    </task>
+    <task id="LOCAL-00006" summary="best_album-programmers">
+      <created>1623117748224</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623117748224</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +112,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prepare" />
     <MESSAGE value="boxCounting_hw1" />
-    <option name="LAST_COMMIT_MESSAGE" value="boxCounting_hw1" />
+    <MESSAGE value="best_album-programmers" />
+    <option name="LAST_COMMIT_MESSAGE" value="best_album-programmers" />
   </component>
 </project>
