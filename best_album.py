@@ -1,4 +1,4 @@
-#https://programmers.co.kr/learn/courses/30/lessons/42579?language=python3
+# https://programmers.co.kr/learn/courses/30/lessons/42579?language=python3
 
 genres = ["classic", "pop", "classic", "classic", "pop", "kpop"]
 plays = [900, 600, 900, 300, 2500, 3200]
