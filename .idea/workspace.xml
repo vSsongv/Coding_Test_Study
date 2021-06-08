@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="prepare">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="boxCounting_hw1">
+      <change afterPath="$PROJECT_DIR$/best_album.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
       <updated>1622613202560</updated>
       <workItem from="1622613205849" duration="6000" />
       <workItem from="1622613214785" duration="1060000" />
-      <workItem from="1622615527866" duration="5439000" />
+      <workItem from="1622615527866" duration="10706000" />
     </task>
     <task id="LOCAL-00001" summary="prepare">
       <created>1622614360059</created>
@@ -60,7 +60,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622614360059</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="boxCounting_hw1">
+      <created>1622622538527</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622622538527</updated>
+    </task>
+    <task id="LOCAL-00003" summary="boxCounting_hw1">
+      <created>1622622568150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622622568150</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +94,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prepare" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepare" />
+    <MESSAGE value="boxCounting_hw1" />
+    <option name="LAST_COMMIT_MESSAGE" value="boxCounting_hw1" />
   </component>
 </project>

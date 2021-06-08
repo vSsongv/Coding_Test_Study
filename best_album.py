@@ -1,0 +1,32 @@
+#https://programmers.co.kr/learn/courses/30/lessons/42579?language=python3
+
+genres = ["classic", "pop", "classic", "classic", "pop", "kpop"]
+plays = [900, 600, 900, 300, 2500, 3200]
+
+f_dict = {}
+answer = []
+
+for i in range(len(genres)):
+    if genres[i] in f_dict:
+        f_dict[genres[i]] += plays[i]
+    else: f_dict[genres[i]] = plays[i]
+
+f_dict = sorted(f_dict.items(), key=lambda n: n[1], reverse=True)
+print(f_dict)
+
+for i in range(2):
+    print(f_dict)
+    temp = {}
+    for j in range(len(genres)):
+        if genres[j] == f_dict[i][0]: # 제일 많이 재생된 장르가 genres배열에서 몇번째인지 알고, 그 인덱스가 plays에서 뭐가 더 큰지 봐야됨.
+            temp[j] = plays[j] #1,600, 4,2500 이렇게 들어가겠네,
+
+    temp = sorted(temp.items(), key=lambda n: n[1], reverse=True) #소팅하고
+    print(temp)
+    if len(temp) > 1:
+        for l in range(2):
+            print(temp[l][0])
+            answer.append(temp[l][0])
+    else : answer.append(temp[0][0])
+
+print(answer)
