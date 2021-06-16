@@ -81,17 +81,13 @@ gImg.save(localDownloadDefaultPath + 'grey_scale_segmetation_' + file_name.split
 gImg.close() #grey scale image 완료
 
 tImg.save(localDownloadDefaultPath + 't_' + file_name)
-sImg = Image.open(localDownloadDefaultPath + 't_' + file_name) #색이 완전히 칠해진 이미지를 불러온 후,
 
-bImage = Image.blend(img, sImg, 0.7) #blend
+bImage = Image.blend(img, tImg, 0.7) #blend
 
 bImage.save(localDownloadDefaultPath + 'b_' + file_name)
 img.close()
 
-os.remove(localDownloadDefaultPath + 't_' + file_name) #temp image 삭제
 os.remove(localDownloadDefaultPath + file_name) #원본 image 삭제
-
-i_img = Image.open(localDownloadDefaultPath + 'b_' + file_name)
 
 mask = Image.new('L', img_size, 0) #mask image 생성
 black = Image.new('RGB', img_size, 0) #검은 image 생성. mode를 RGB로 해주어야 색을 인식하나봄.
@@ -102,7 +98,7 @@ for object in rVal['result_data'][labelKey]:
 
     draw.polygon(polygon_list, fill=255) #mask image에 polygon이 그려진 mask이미지 생성.
 
-iImg = Image.composite(i_img, black, mask) #blend된 crop부분을 mask의 하얀 부분에 씌움.
+iImg = Image.composite(bImage, black, mask) #blend된 crop부분을 mask의 하얀 부분에 씌움.
 iImg.save(localDownloadDefaultPath + 'instance_segmentation_' + file_name.split('.')[0] + '.png')
 
-os.remove(localDownloadDefaultPath + 'b_' + file_name)  # blend image 삭제
+bImage.close()
