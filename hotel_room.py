@@ -12,7 +12,7 @@ def solution(k, room_number):
         rooms[i] = 0
 
     for i,val in enumerate(room_number):
-        if rooms[val] == 0: #원하는 방이 빈 방이면
+        if val not in answer: #원하는 방이 빈 방이면
             rooms[val] = 1 #value를 1로 바꾸고,
             answer.append(val) #해당 room_number를 answer에 append.
         else:
