@@ -102,3 +102,38 @@
 #     print(str(f))
 # else:
 #     print(str(s))
+
+# https://www.acmicpc.net/problem/2920[음계]
+# import sys
+
+# note = sys.stdin.readline().split()
+
+# if note[0] == "1":
+#   flag = 1
+# elif note[0] == "8":
+#   flag = 2
+# else:
+#   flag = 0
+#   print("mixed")
+
+# if flag != 0:
+#   for i in range(8):
+#     if flag == 1:
+#       if note[i] == str(i+1): #1부터 순서대로
+#         continue
+#       else:
+#         print("mixed")
+#         flag = 0
+#         break
+#     else:
+#       if note[i] == str(8-i): #8부터 순서대로인지  
+#         continue
+#       else:
+#         flag = 0
+#         print("mixed")
+#         break;
+
+# if flag == 1:
+#   print("ascending")
+# elif flag == 2:
+#   print("descending")
