@@ -105,9 +105,9 @@
 
 # https://www.acmicpc.net/problem/2920[음계]
 # import sys
-
+#
 # note = sys.stdin.readline().split()
-
+#
 # if note[0] == "1":
 #   flag = 1
 # elif note[0] == "8":
@@ -115,7 +115,7 @@
 # else:
 #   flag = 0
 #   print("mixed")
-
+#
 # if flag != 0:
 #   for i in range(8):
 #     if flag == 1:
@@ -132,12 +132,11 @@
 #         flag = 0
 #         print("mixed")
 #         break;
-
+#
 # if flag == 1:
 #   print("ascending")
 # elif flag == 2:
 #   print("descending")
-
 
 # https://www.acmicpc.net/problem/3052 [나머지]
 # mods = []
