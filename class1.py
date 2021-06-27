@@ -102,3 +102,15 @@
 #     print(str(f))
 # else:
 #     print(str(s))
+
+# https://www.acmicpc.net/problem/3052 [나머지]
+# mods = []
+# for _ in range(10):
+#     n = int(input())
+#     m = n % 42
+#
+#     if m not in mods:
+#         mods.append(m)
+#
+# print(len(mods))
+
