@@ -149,3 +149,46 @@
 #
 # print(len(mods))
 
+# https://www.acmicpc.net/problem/8958 [OX퀴즈]
+# num = int(input())
+#
+# for _ in range(num):
+#     cnt = 0
+#     score = 0
+#     ox_list = list(str(input().split()))
+#     for ox in ox_list:
+#         if ox == 'O':
+#             cnt += 1
+#             score += 1*cnt
+#         else:
+#             cnt = 0
+#
+#     print(score)
+
+# https://www.acmicpc.net/problem/11720 [숫자의 합]
+# n = input()
+# print(sum(map(int,input())))
+
+# https://www.acmicpc.net/problem/10809 [알파벳 찾기]
+# word = input()
+# alphabet = list(range(97,123))  # 아스키코드 숫자 범위
+#
+# for x in alphabet :
+#     print(word.find(chr(x)))
+
+# https://www.acmicpc.net/problem/10818 [최소 최대]
+# n = int(input())
+# numbers = list(map(int,input().split()))
+# print(min(numbers), max(numbers), end='')
+
+# https://www.acmicpc.net/problem/10871 [x보다 작은 수]
+# import sys
+# N, X = map(int,sys.stdin.readline().split())
+#
+# numbers = list(map(int,input().split()))
+#
+# for n in range(N):
+#     if numbers[n] < X:
+#         print(numbers[n], end=' ')
+
+
