@@ -165,6 +165,21 @@
 #
 #     print(score)
 
+# https://www.acmicpc.net/submit/10951/30414786 [A+B -4]
+# while True:
+#     try:
+#         f, s = map(int, input().split())
+#     except:
+#         break
+#     print(f+s)
+
+# https://www.acmicpc.net/submit/10952/30414837 [A+B -5]
+# while True:
+#     f, s = map(int, input().split())
+#     if f == 0 and s == 0:
+#         break
+#     print(f+s)
+
 # https://www.acmicpc.net/problem/11720 [숫자의 합]
 # n = input()
 # print(sum(map(int,input())))
