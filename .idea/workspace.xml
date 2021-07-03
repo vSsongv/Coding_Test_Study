@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="best_album-programmers" />
+    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="class1_add_some_code">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maximum_num.js" beforeDir="false" afterPath="$PROJECT_DIR$/maximum_num.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -36,6 +42,36 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="that_song" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/that_song.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.that_song" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -48,6 +84,23 @@
       <workItem from="1622613205849" duration="6000" />
       <workItem from="1622613214785" duration="1060000" />
       <workItem from="1622615527866" duration="11005000" />
+      <workItem from="1624374077706" duration="7438000" />
+      <workItem from="1624467553761" duration="3461000" />
+      <workItem from="1624524921231" duration="4874000" />
+      <workItem from="1624535123467" duration="3290000" />
+      <workItem from="1624802508161" duration="6130000" />
+      <workItem from="1624891756156" duration="1581000" />
+      <workItem from="1624928488803" duration="91000" />
+      <workItem from="1624949232683" duration="493000" />
+      <workItem from="1624949771619" duration="834000" />
+      <workItem from="1624957826402" duration="9000" />
+      <workItem from="1625061945592" duration="1361000" />
+      <workItem from="1625148121225" duration="342000" />
+      <workItem from="1625151477853" duration="63000" />
+      <workItem from="1625152271162" duration="57000" />
+      <workItem from="1625153321497" duration="797000" />
+      <workItem from="1625155247062" duration="57000" />
+      <workItem from="1625320294102" duration="736000" />
     </task>
     <task id="LOCAL-00001" summary="prepare">
       <created>1622614360059</created>
@@ -91,7 +144,112 @@
       <option name="project" value="LOCAL" />
       <updated>1623117748224</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="solved.ac_class1_ing">
+      <created>1624382181746</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624382181746</updated>
+    </task>
+    <task id="LOCAL-00008" summary="check">
+      <created>1624382574237</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624382574237</updated>
+    </task>
+    <task id="LOCAL-00009" summary="check">
+      <created>1624382690346</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624382690346</updated>
+    </task>
+    <task id="LOCAL-00010" summary="second_class_1_ing">
+      <created>1624471014276</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624471014276</updated>
+    </task>
+    <task id="LOCAL-00011" summary="class1_ing_11_left">
+      <created>1624553621086</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624553621086</updated>
+    </task>
+    <task id="LOCAL-00012" summary="class1_still_ing">
+      <created>1624805834250</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1624805834250</updated>
+    </task>
+    <task id="LOCAL-00013" summary="class1_still_ing">
+      <created>1624805948913</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624805948914</updated>
+    </task>
+    <task id="LOCAL-00014" summary="finish_class1!!">
+      <created>1624808820224</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1624808820224</updated>
+    </task>
+    <task id="LOCAL-00015" summary="class2_start">
+      <created>1624893315521</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624893315521</updated>
+    </task>
+    <task id="LOCAL-00016" summary="class1_add_some_code">
+      <created>1624893333703</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624893333703</updated>
+    </task>
+    <task id="LOCAL-00017" summary="mailing_service_code">
+      <created>1624950846253</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1624950846253</updated>
+    </task>
+    <task id="LOCAL-00018" summary="need to CS study :(">
+      <created>1625063128632</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1625063128632</updated>
+    </task>
+    <task id="LOCAL-00019" summary="-ing">
+      <created>1625151528812</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1625151528812</updated>
+    </task>
+    <task id="LOCAL-00020" summary="-ing">
+      <created>1625155206434</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1625155206434</updated>
+    </task>
+    <task id="LOCAL-00021" summary="-ing">
+      <created>1625155285402</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1625155285402</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +271,17 @@
     <MESSAGE value="prepare" />
     <MESSAGE value="boxCounting_hw1" />
     <MESSAGE value="best_album-programmers" />
-    <option name="LAST_COMMIT_MESSAGE" value="best_album-programmers" />
+    <MESSAGE value="solved.ac_class1_ing" />
+    <MESSAGE value="check" />
+    <MESSAGE value="second_class_1_ing" />
+    <MESSAGE value="class1_ing_11_left" />
+    <MESSAGE value="class1_still_ing" />
+    <MESSAGE value="finish_class1!!" />
+    <MESSAGE value="class2_start" />
+    <MESSAGE value="class1_add_some_code" />
+    <MESSAGE value="mailing_service_code" />
+    <MESSAGE value="need to CS study :(" />
+    <MESSAGE value="-ing" />
+    <option name="LAST_COMMIT_MESSAGE" value="-ing" />
   </component>
 </project>
