@@ -1,20 +1,21 @@
 // https://programmers.co.kr/learn/courses/30/lessons/12899 [124 나라의 숫자]
 
 function solution(n) {
-    var answer = '';
+    let answer = '';
+    let mod = 0
 
     while(n>=1){
-        div = String(n%3)
-        if(div == 0){
-            answer += 4
+        mod = String(n%3);
+        if(mod == 0){
+            answer += 4;
+            n = parseInt(n/3)-1;
         }
-        answer += div
-        console.log(answer)
-        n = parseInt(n/3)
-        console.log("n",n)
+        else {
+            answer += mod;
+            n = parseInt(n/3);
+        }
     }
-    console.log(answer)
-    return answer;
+    return answer.split("").reverse().join("");
 }
 
-solution(15)
+solution(10)
