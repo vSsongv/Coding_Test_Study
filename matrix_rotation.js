@@ -54,4 +54,4 @@ function solution(rows, columns, queries) {
 }
 
 
-console.log(solution(6,6,[[2,2,5,4],[3,3,6,6],[5,1,6,3]]))
+console.log(solution(5,5,[[2,2,5,4],[3,3,6,6],[5,1,6,3]]))
