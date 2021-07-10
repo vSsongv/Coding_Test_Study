@@ -16,17 +16,33 @@
 # 이분 탐색의 시간 복잡도는 O(logN)
 # Set과 Dictionary의 in연산을 통한 포함 여부 확인의 시간 복잡도는 O(1)
 # 해당 집합에 포함되는지 여부만 확인하면 되므로 Set 자료형을 사용해도 충분
+# import sys
+#
+# nothing = int(input())
+# base_list = set(map(int, sys.stdin.readline().split()))
+# num = int(input())
+# target_list = list(map(int, sys.stdin.readline().split()))
+#
+# for i in target_list:
+#     if i in base_list:
+#         print('1')
+#     else:
+#         print('0')
+
+# https://www.acmicpc.net/problem/2798 [블랙잭]
 import sys
 
-nothing = int(input())
-base_list = set(map(int, sys.stdin.readline().split()))
-num = int(input())
-target_list = list(map(int, sys.stdin.readline().split()))
+N,M = map(int,sys.stdin.readline().split())
+cards = list(map(int, sys.stdin.readline().split()))
+sum = 0
 
-for i in target_list:
-    if i in base_list:
-        print('1')
-    else:
-        print('0')
+for i in range(N-2):
+    for j in range(i+1, N-1):
+        for k in range(j+1, N):
+            if cards[i]+cards[j]+cards[k] <= M and cards[i]+cards[j]+cards[k] > sum:
+                sum = cards[i]+cards[j]+cards[k]
+print(sum)
+
+
 
 
