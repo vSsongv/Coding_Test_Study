@@ -1,5 +1,5 @@
 // https://www.acmicpc.net/problem/2798 [블랙잭] - 브루트 포스(brute force)
-
+// https://tesseractjh.tistory.com/4(참고)
 const input = require("fs").readFileSync("/dev/stdin").toString().trim().split(/\s/).map(item => parseInt(item));
 
 let N = parseInt(input[0]);
