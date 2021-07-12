@@ -27,4 +27,4 @@ function solution(money, cost) {
     return answer;
 }
 
-solution(420,	[0, 900, 0, 200, 150, 0, 30, 50])
+solution(420, [0, 900, 0, 200, 150, 0, 30, 50])
