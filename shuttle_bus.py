@@ -23,24 +23,23 @@ def solution(n, t, m, timetable):
     timetable.sort()  # 먼저 timetable내부 값들 sort
     clone_tt = copy.deepcopy(timetable)
 
-    for _ in range(n): #버스는 n번 오기때문에.
-        start_time += t #지금 버스 출발시간에 t만큼 더해줌
+    for i in range(n): #버스는 n번 오기때문에.
         totalCrewNum = 0
-        index = 0 #sort했으니까 제일 앞에 애만 보면 됨.
         while totalCrewNum < m and len(clone_tt) > 0:  # m이랑 같아질 때까지
-            if H_to_M(clone_tt[index]) <= start_time: #출발시간보다 일찍 왔으면
+            if clone_tt[0] == "24:00": #sort했으니까 제일 앞에 애만 보면 됨.
+                clone_tt[0] = "23:59"
+            if H_to_M(clone_tt[0]) <= start_time: #출발시간보다 일찍 왔으면
                 totalCrewNum += 1 #타세요
-                clone_tt.remove(clone_tt[index])
-                print(clone_tt)
+                del clone_tt[0]
             else: #다음 크루가 현재 버스의 출발시간보다 늦게 왔다면
                 break;
+        start_time += t  # 지금 버스 출발시간에 t만큼 더해줌
 
     if totalCrewNum < m:
-        print(totalCrewNum)
         answer = M_to_H(start_time-t)
     else:
         answer = M_to_H(H_to_M(timetable[-1]) - 1)
     print(answer)
     return answer
 
-solution(2,	10,	2,	["09:10", "09:09", "08:00"])
+solution(1,	1,	1,	["24:00"])
