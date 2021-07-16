@@ -20,7 +20,8 @@ def solution(n, t, m, timetable):
         return str(H) + ":" + str(M)
 
     start_time = H_to_M("09:00") #분으로 바꾸고
-    timetable.sort()  # 먼저 timetable내부 값들 sort
+    last_time = M_to_H(start_time + (n-1) * t)
+    timetable.sort()  # 먼저 timetable 내부 값들 sort
     clone_tt = copy.deepcopy(timetable)
 
     for i in range(n): #버스는 n번 오기때문에.
@@ -40,6 +41,5 @@ def solution(n, t, m, timetable):
     else:
         answer = M_to_H(H_to_M(timetable[-1]) - 1)
     print(answer)
-    return answer
 
-solution(1,	1,	1,	["24:00"])
+solution(1,	1,	5,	["08:00", "08:01", "08:02", "08:03"])
