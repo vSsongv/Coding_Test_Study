@@ -6,6 +6,40 @@
 import copy
 
 def solution(n, t, m, timetable):
+    answer = ''
+    def H_to_M(time): #시간을 분으로 바꾸는 함수
+        H,M = map(int, time.split(":"))
+        return H * 60 + M
+
+    def M_to_H(minute):#분을 시간으로 바꾸는 함수
+        H,M = divmod(minute, 60)
+        if H < 10:
+            H = "0" + str(H)
+        if M < 10:
+            M = "0" + str(M)
+        return str(H) + ":" + str(M)
+
+    start_time = H_to_M("09:00") #분으로 바꾸고
+    timetable.sort()  # 먼저 timetable내부 값들 sort
+    last_crew = 0
+
+    for i in range(n): #버스는 n번 오기때문에.
+        totalCrewNum = 0
+        while totalCrewNum < m and len(timetable) > 0:  # m이랑 같아질 때까지
+            if H_to_M(timetable[0]) <= start_time: #출발시간보다 일찍 왔으면
+                totalCrewNum += 1 #타세요
+                last_crew = H_to_M(timetable[0]) #마지막으로 탄 크루원
+                del timetable[0]
+            else: #다음 크루가 현재 버스의 출발시간보다 늦게 왔다면
+                break;
+        start_time += t  # 지금 버스 출발시간에 t만큼 더해줌
+
+    if totalCrewNum < m:
+        answer = M_to_H(start_time-t)
+    else:
+        answer = M_to_H(last_crew - 1) #마지막으로 탄 크루원 보다는 1분 일찍 와야징
+    
+    return answer
 
     # timetable = [int(time[:2]) * 60 + int(time[3:5]) for time in timetable]
     # timetable.sort()
@@ -22,28 +56,5 @@ def solution(n, t, m, timetable):
     #         if timetable[j] <= bus_arrive:
     #             del timetable[j]
 
-    start_time = 540
-    timetable = [int(time[:2]) * 60 + int(time[3:5]) for time in timetable]
-    timetable.sort()
-    clone_tt = copy.deepcopy(timetable)
-
-    for i in range(n):
-        totalCrewNum = 0
-        while totalCrewNum < m and len(clone_tt) > 0:  # m이랑 같아질 때까지
-            if clone_tt[0] == 1440: #sort했으니까 제일 앞에 애만 보면 됨.
-                clone_tt[0] = 1439
-            if clone_tt[0] <= start_time: #출발시간보다 일찍 왔으면
-                totalCrewNum += 1 #타세요
-                del clone_tt[0]
-            else: #다음 크루가 현재 버스의 출발시간보다 늦게 왔다면
-                break;
-        start_time += t  # 지금 버스 출발시간에 t만큼 더해줌
-
-    if totalCrewNum < m:
-        answer = '%02d:%02d'%((start_time - t)/60,(start_time - t)%60)
-    else:
-        last_time = timetable[-1] - 1
-        answer = '%02d:%02d'%(last_time/60,last_time%60)
-    print(answer)
 
 solution(1,	1,	5,	["08:00", "08:01", "08:02", "08:03"])
