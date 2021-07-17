@@ -1,4 +1,7 @@
 // https://programmers.co.kr/learn/courses/30/lessons/72410 [신규 아이디 추천]
+// 정규식 참고 코드
+// https://ninearies.tistory.com/177
+// https://curryyou.tistory.com/234
 
 function solution(new_id) {
     var answer = '';
@@ -25,7 +28,7 @@ function DeleteOneDot(new_id) { //step 4
 
 function Create(new_id) { //step 5
     if(new_id === "") {
-        new_id = "a";
+        return new_id = "aaa";
     }
     return new_id;
 }
@@ -38,10 +41,8 @@ function MakeShort(new_id) { //step 6
 }
 
 function MakeLong(new_id) { //step 7
-    if(new_id.length <= 2) {
-        while(new_id.length < 3) {
-            new_id += new_id[new_id.length-1];
-        }
+    while(new_id.length < 3) {
+        new_id += new_id[new_id.length-1];
     }
     return new_id
 }
