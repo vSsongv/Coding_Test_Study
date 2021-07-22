@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/4673 [셀프 넘버]
+
 def calculation(num):
     Sum = 0
     origin = num
