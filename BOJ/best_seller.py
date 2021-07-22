@@ -1,4 +1,4 @@
-# https://www.acmicpc.net/problem/1302
+# https://www.acmicpc.net/problem/1302 [베스트 셀러]
 
 sold_book_num = input("books num?: ")
 
