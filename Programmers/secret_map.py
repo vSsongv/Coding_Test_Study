@@ -30,3 +30,15 @@ def solution(n, arr1, arr2):
     return answer
 
 solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
+
+#짧은버전
+def solution(n, arr1, arr2):
+    answer = []
+    for i in range(n):
+        binary = arr1[i] | arr2[i]
+        binary = format(binary, 'b').zfill(n)  # zfill(n) -> n개만큼 0을 왼쪽에 채우는함수
+
+        binary = binary.replace('0', ' ')
+        binary = binary.replace('1', '#')
+
+        answer.append(binary)
