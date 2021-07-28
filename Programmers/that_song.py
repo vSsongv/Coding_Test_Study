@@ -1,4 +1,5 @@
 # https://programmers.co.kr/learn/courses/30/lessons/17683 [방금그곡]
+# need to solve!
 
 m	musicinfos	answer
 "ABCDEFG"	["12:00,12:14,HELLO,CDEFGAB", "13:00,13:05,WORLD,ABCDEF"]	"HELLO"
