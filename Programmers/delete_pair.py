@@ -17,4 +17,4 @@ def solution(s):
     else:  # 빈배열이면 짝짓기 성공
         return 1
 
-solution('baabaa')
+solution('baabaad')
