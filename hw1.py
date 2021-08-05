@@ -20,7 +20,7 @@ def main(numOfClothes):
 	if int(rof5 % 3) == 0: #13 같은경우 5로 나누고 나머지가 3으로 나눠짐
 		numOfBox = qof5 + (rof5 / 3)
 
-	if int(rof5 % 3) != 0: # 21은 한번에 안나눠짐 먼저 4로 나누넹 그럼 5*3하면서 줄이기
+	if int(rof5 % 3) != 0: # 21 같은 경우 한번에 안나눠짐 먼저 4로 나누고, 그 다음부터 5*3하면서 줄이기
 		for i in range(qof5, 0, -1):
 			if (numOfClothes - (5 * i)) % 3 == 0:
 				temp = i + ((numOfClothes - (5 * i)) / 3)
