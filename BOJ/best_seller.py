@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/1302 [베스트 셀러]
+# JS로 풀어보기.
 
 sold_book_num = input("books num?: ")
 
