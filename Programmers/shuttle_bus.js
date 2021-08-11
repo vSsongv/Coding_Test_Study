@@ -1,5 +1,5 @@
 // https://programmers.co.kr/learn/courses/30/lessons/17678[셔틀 버스]
-// Js로 풀어보기
+// Js로 풀어보기!
 
 //09:00부터 n회 t분 간격으로, m명이 탈 수 있다.
 // n   t	m	timetable	이
