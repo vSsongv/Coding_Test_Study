@@ -1,4 +1,5 @@
 # https://programmers.co.kr/learn/courses/30/lessons/64063
+# 효율성 통과하기, JS로 풀어보기.
 
 k = 10
 room_number	= [1,3,4,1,3,1]
