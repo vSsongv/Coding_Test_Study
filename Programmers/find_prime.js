@@ -1,9 +1,7 @@
 // https://programmers.co.kr/learn/courses/30/lessons/42839 [소수 찾기]
 
-// 소수 찾기
 // 순열을 만드는 함수
 function makePermutations(arr, select) {
-  // 순열
   const permutations = [];
   // 1개를 택하면 모든 원소를 return
   if (select === 1) return arr.map((value) => {
@@ -26,7 +24,7 @@ function makePermutations(arr, select) {
 // 소수임을 판별하는 함수
 function checkPrime(number) {
   // 소수 여부를 저장하는 변수
-  // 소수이면 true, true로 초기화
+  // 소수이면 true
   let plag = true;
   // 2부터 i의 제곱이 해당 숫자 이하일 때까지 나머지가 0인지 체크
   for (let i = 2; i * i <= number; i++) {
