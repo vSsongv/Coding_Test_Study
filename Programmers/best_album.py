@@ -1,4 +1,5 @@
-#https://programmers.co.kr/learn/courses/30/lessons/42579?language=python3
+# https://programmers.co.kr/learn/courses/30/lessons/42579?language=python3
+# JS로 풀어보기.
 
 genres = ["classic", "pop", "classic", "classic", "pop"]
 plays = [500, 600, 150, 800, 2500]

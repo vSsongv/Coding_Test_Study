@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/4673 [셀프 넘버]
+# JS로 풀어보기.
 
 def calculation(num):
     Sum = 0
