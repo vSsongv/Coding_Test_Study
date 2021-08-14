@@ -16,24 +16,23 @@ function solution(orders, course) {
     let answer = [];
     for (let i = 0; i < course.length; i++) {
         let dict = {};
-        let max = 1;
+        let max = 1; //초기값이 0이므로 1이상이면 2번이상 주문된것
         orders.forEach((order) => {
             if (order.length >= course[i]) {
                 let combination = combi(order.split("").sort(), course[i]);
                 combination.forEach((item) => {
                     item = item.join("");
                     if (item in dict) {
-                        dict[item]++;
-                        max = (max < dict[item]) ? dict[item] : max;
+                        dict[item]++; //모든 order값에 대해 조합을 만들기 때문에 dict내에 key가 있으면 또 주문된 것임.
+                        if(max < dict[item]) max = dict[item]; //최대 주문횟수 갱신.
                     }
                     else dict[item] = 0;
                 });
             }
         });
-        for (const [key, value] of Object.entries(dict)) {
-            if (value == max) {
-                console.log(key, value);
-                answer.push(key);
+        for (const [key, value] of Object.entries(dict)) { //dict를 돌면서
+            if (value == max) { //최대 주문횟수와 같은 val값이 있으면
+                answer.push(key); //answer에 push.
             }
         }
     }
