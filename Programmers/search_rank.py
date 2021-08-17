@@ -1,5 +1,6 @@
 # https://programmers.co.kr/learn/courses/30/lessons/72412 [순위 검색]
 # https://tech.kakao.com/2021/01/25/2021-kakao-recruitment-round-1/
+# need to solve!
 
 info = ["java backend junior pizza 150", "python frontend senior chicken 210", "python frontend senior chicken 150",
         "cpp backend senior pizza 260", "java backend junior chicken 80", "python backend senior chicken 50"]
