@@ -1,5 +1,4 @@
 # https://programmers.co.kr/learn/courses/30/lessons/67256 [키패드 누르기]
-# 좌표로 해보기, js로 해보기
 
 def solution(numbers, hand):
     left = {
