@@ -9,17 +9,23 @@ function solution(n, t, m, timetable) {
     const getTime = time => time.substr(0, 2) * 60 + +time.substr(3);
     var answer = '';
     let start_time = getTime("09:00");
+    let totalCrewNum = 0;
     let last_crew_time = 0;
     timetable.sort();
-    for(let i = 0; i < n; i++) {
-        let totalCrewNum = 0;
-        while (totalCrewNum < m && len(timetable)) {
-            if(getTime(timetable[0]) <= start_time) {
+    for (let i = 0; i < n; i++) {
+        totalCrewNum = 0;
+        while (totalCrewNum < m && timetable.length > 0) {
+            if (getTime(timetable[0]) <= start_time) {
                 totalCrewNum++;
                 last_crew_time = getTime(timetable[0]);
                 timetable.shift();
             }
+            else break;
         }
+        start_time += t;
     }
-    return answer;
+    if (totalCrewNum < m) answer = (start_time-t);
+    else answer = last_crew_time - 1;
+    
+    return String(Math.floor(answer / 60)).padStart(2, '0') + ':' + String(answer % 60).padStart(2, '0');
 }
