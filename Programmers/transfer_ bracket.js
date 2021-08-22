@@ -30,6 +30,10 @@ function solution(p) {
             else {
                 answer += p.substring(0,i+1); //올바른 모양이면 바로 answer에 추가해주기
                 answer += solution(p.substring(i+1)); //재귀
+
+                //substring이 연산이 제일 느림.
+                answer += p.substr (0, i + 1); //올바른 모양이면 바로 answer에 추가해주기
+                answer += solution(p.substr (i + 1, p.length-i)); //재귀
                 
                 return answer;
             }
