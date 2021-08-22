@@ -5,7 +5,7 @@ function solution(N, stages) {
     let fail_rate = {}
     let userNum = stages.length;
     
-    stages.sort(function(a, b)  {
+    stages.sort(function(a, b)  { //JS는 숫자 소팅 주의!!!!
         return a - b;
     });
     
