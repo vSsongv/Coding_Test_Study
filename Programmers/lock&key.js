@@ -1,6 +1,6 @@
 // https://programmers.co.kr/learn/courses/30/lessons/60059 [자물쇠와 키]
 
-function rotate(key) {
+function rotate(key) { //90도 rotate function
     let len = key.length;
     let new_key = Array.from(Array(len), () => Array(len).fill(0));
     for(let i = 0; i < len; i++) {
