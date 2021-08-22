@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="class1_add_some_code">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maximum_num.js" beforeDir="false" afterPath="$PROJECT_DIR$/maximum_num.js" afterDir="false" />
-    </list>
+    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="class1_add_some_code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
