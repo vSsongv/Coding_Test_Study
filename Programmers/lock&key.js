@@ -24,8 +24,10 @@ function solution(key, lock) {
         }
     }
     
-    for(let x = 0; x < bigRock.length; x++) {
-        for(let y = 0; y < )
+    for(let x = 0; x < bigRock.length - 2; x++) {
+        for(let y = 0; y < bigRock.length - 2; y++) {
+            bigRock[x][y] = key[x][y]
+        }
     }
     
     return answer;
