@@ -5,8 +5,24 @@ function solution(table, languages, preference) {
     let career = {};
     for(let i = 0; i < 5; i++) {
         let temp = table[i].split(" ");
-        career[temp[0]] = [temp[5],temp[4],temp[3],temp[2],temp[1]];
+        career[temp[0]] = [temp[5],temp[4],temp[3],temp[2],temp[1]]; //make career dict. key = career, val = languages with their score. and append in array.
     }
-    console.log(career);
+    
+    let l = 0;
+    while(l < 3) {
+        let target_lang = languages[l]; //target languages
+        let target_pref = preference[l]; //target score
+        for (let key in career) {
+            let score = 0;
+            let langs = career[key];
+            if(langs.includes(target_lang)) {
+                score += (target_pref * (langs.indexOf(target_lang) + 1));
+            }
+            
+        console.log(score);
+        }
+        l++;
+    }
+
     return answer;
 }
