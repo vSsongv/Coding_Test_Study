@@ -1,3 +1,5 @@
+// https://programmers.co.kr/learn/courses/30/lessons/72411 [메뉴 리뉴얼]
+
 function combi(order, num) {
     let results = [];
     if (num == 1) {
