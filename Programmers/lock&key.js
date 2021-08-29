@@ -11,11 +11,10 @@ function rotate(key) { //rotate function
     return new_key;
 }
 
-function isLock(tmp_Rock, len) {
-    
-    let start_coor = len-1;
-    for(let i = start_coor; i <= (start_coor) * 2; i++) {
-        for(let j = start_coor; j <= (start_coor) * 2; j++) {
+function isLock(tmp_Rock, rockLen, keyLen) {
+    let start_coor = keyLen-1;
+    for(let i = start_coor; i <= rockLen-keyLen; i++) {
+        for(let j = start_coor; j <= rockLen-keyLen; j++) {
             if(tmp_Rock[i][j] != 1) return false;
         }
     }
@@ -23,15 +22,16 @@ function isLock(tmp_Rock, len) {
 }
 
 function solution(key, lock) {
-    var answer = true;
     
-    const len = lock.length;
-    const bigRock = Array.from(Array(len + (key.length-1) * 2), () => Array(len + (key.length-1) * 2).fill(0)); //make array that has big size of lock.
+    const rockLen = lock.length;
+    const keyLen = key.length;
+    
+    const bigRock = Array.from(Array(rockLen + (keyLen-1) * 2), () => Array(rockLen + (keyLen-1) * 2).fill(0)); //make array that has big size of lock.
      
                 
-    let start_coor = len-1;
-    for(let i = start_coor; i <= (start_coor) * 2; i++) {
-        for(let j = start_coor; j <= (start_coor) * 2; j++) {
+    let start_coor = keyLen-1;
+    for(let i = start_coor; i <= rockLen-keyLen; i++) {
+        for(let j = start_coor; j <= rockLen-keyLen; j++) {
             bigRock[i][j] = lock[i - start_coor][j - start_coor]; //insert lock in the middle of big array
         }
     }
@@ -39,19 +39,18 @@ function solution(key, lock) {
     let c = 0;
     while(c < 4) { //key can be rotated 4 times.
         key = rotate(key);
-        let tmp_Rock = bigRock;
         
-        for(let x = 0; x < bigRock.length - len; x++) { //bigRock x coordinates
-            for(let y = 0; y < bigRock.length - len; y++) { //bigRock y coordinates 
-                for(let k = 0; k < key.length; k++) { 
-                    for(let l = 0; l < key.length; l++) {
+        for(let x = 0; x < bigRock.length - keyLen; x++) { //bigRock x coordinates
+            for(let y = 0; y < bigRock.length - keyLen; y++) { //bigRock y coordinates 
+                
+                const tmp_Rock = bigRock.map((c) => c.slice());
+                
+                for(let k = 0; k < keyLen; k++) { 
+                    for(let l = 0; l < keyLen; l++) {
                         tmp_Rock[x+l][y+k] += key[k][l];                        
                     }
                 }
-                if(isLock(tmp_Rock, len)) return true;
-                console.log(bigRock);
-                tmp_Rock = bigRock;
-                console.log("here");
+                if(isLock(tmp_Rock, rockLen, keyLen)) return true;
             }
         }
         c++;
