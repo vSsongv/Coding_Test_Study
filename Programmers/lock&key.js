@@ -11,7 +11,7 @@ function rotate(key) { //rotate function
     return new_array;
 }
 
-function isOpenk(tmp_Rock, rockLen, keyLen) {
+function isOpen(tmp_Rock, rockLen, keyLen) {
     let start_coor = keyLen-1;
     for(let i = start_coor; i <= rockLen-keyLen; i++) {
         for(let j = start_coor; j <= rockLen-keyLen; j++) {
@@ -49,8 +49,8 @@ function solution(key, lock) {
     while(c < 4) { //key can be rotated 4 times.
         key = rotate(key);
         
-        for(let x = 0; x < bigRock.length - keyLen; x++) { //bigRock x coordinates
-            for(let y = 0; y < bigRock.length - keyLen; y++) { //bigRock y coordinates 
+        for(let x = 0; x <= bigRock.length - keyLen; x++) { //bigRock x coordinates
+            for(let y = 0; y <= bigRock.length - keyLen; y++) { //bigRock y coordinates     
                 
                 const tmp_Rock = bigRock.map((c) => c.slice());
                 
