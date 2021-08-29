@@ -11,12 +11,12 @@ function rotate(key) { //rotate function
     return new_key;
 }
 
-function isLock(tmp_Rock) {
-    for(let a = 0; a < len; a++) {
-        for(let b = 0; b < len; b++) {
-            if(tmp_Rock[a][b] != 1) {
-                return false;
-            }
+function isLock(tmp_Rock, len) {
+    
+    let start_coor = len-1;
+    for(let i = start_coor; i <= (start_coor) * 2; i++) {
+        for(let j = start_coor; j <= (start_coor) * 2; j++) {
+            if(tmp_Rock[i][j] != 1) return false;
         }
     }
     return true;
@@ -28,6 +28,7 @@ function solution(key, lock) {
     const len = lock.length;
     const bigRock = Array.from(Array(len + (key.length-1) * 2), () => Array(len + (key.length-1) * 2).fill(0)); //make array that has big size of lock.
      
+                
     let start_coor = len-1;
     for(let i = start_coor; i <= (start_coor) * 2; i++) {
         for(let j = start_coor; j <= (start_coor) * 2; j++) {
@@ -47,9 +48,13 @@ function solution(key, lock) {
                         tmp_Rock[x+l][y+k] += key[k][l];                        
                     }
                 }
-                if(isLock(tmp_Rock)) return true;
+                if(isLock(tmp_Rock, len)) return true;
+                console.log(bigRock);
+                tmp_Rock = bigRock;
+                console.log("here");
             }
         }
+        c++;
     }  
     return false;   
 }
