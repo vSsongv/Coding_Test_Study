@@ -11,6 +11,17 @@ function rotate(key) { //rotate function
     return new_key;
 }
 
+function isLock(tmp_Rock) {
+    for(let a = 0; a < len; a++) {
+        for(let b = 0; b < len; b++) {
+            if(tmp_Rock[a][b] != 1) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 function solution(key, lock) {
     var answer = true;
     
@@ -18,12 +29,27 @@ function solution(key, lock) {
     const bigRock = Array.from(Array(len + (key.length-1) * 2), () => Array(len + (key.length-1) * 2).fill(0)); //make array that has big size of lock.
      
     let start_coor = len-1;
-    for (let i = start_coor; i <= (start_coor) * 2; i++) {
-        for (let j = start_coor; j <= (start_coor) * 2; j++) {
+    for(let i = start_coor; i <= (start_coor) * 2; i++) {
+        for(let j = start_coor; j <= (start_coor) * 2; j++) {
             bigRock[i][j] = lock[i - start_coor][j - start_coor]; //insert lock in the middle of big array
         }
     }
     
-    return answer;
-    
+    let c = 0;
+    while(c < 4) { //key can be rotated 4 times.
+        key = rotate(key);
+        let tmp_Rock = bigRock;
+        
+        for(let x = 0; x < bigRock.length - len; x++) { //bigRock x coordinates
+            for(let y = 0; y < bigRock.length - len; y++) { //bigRock y coordinates 
+                for(let k = 0; k < key.length; k++) { 
+                    for(let l = 0; l < key.length; l++) {
+                        tmp_Rock[x+l][y+k] += key[k][l];                        
+                    }
+                }
+                if(isLock(tmp_Rock)) return true;
+            }
+        }
+    }  
+    return false;   
 }
