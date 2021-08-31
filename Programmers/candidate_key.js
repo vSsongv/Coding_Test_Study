@@ -31,11 +31,11 @@ function solution(relation) {
     let arr = [];
     let keyArr = [];
     var answer = 0;
-    
+
     for(let i = 0; i < relation[0].length; i++) {
         arr.push(i);
     }
-    
+
     let combination = [];
     for(let j = 0; j < arr.length; j++) {
         combination = combi(arr, j+1);
