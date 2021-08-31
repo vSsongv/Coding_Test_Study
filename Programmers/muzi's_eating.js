@@ -22,13 +22,13 @@ function solution(food_times, k) {
             if(food_times[i] == 0) {
                 doneFood++;
                 i++;
-                if(i > foodNum-1) i = 0;
+                if(i > foodNum-1) i = 0; //update i
             }
-            else break;
+            else break; //if not 0 val, break;
         }
     }
 
     if(doneFood == foodNum) return -1;
     
-    return i+1;
+    return i+1; //i is index, so add 1
 }
