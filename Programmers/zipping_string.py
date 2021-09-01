@@ -13,7 +13,7 @@ def solution(s):
         cnt = 1 #num of same element
         for j in range(1,len(keys)+1):     #index처리 굉장히 어려웠음
             if(j == len(keys)):
-                if(cnt == 1): #1개여도 붙여줘야 함.
+                if(cnt == 1): #need to add solo char
                     reduced += keys[j-1] 
                     break
                 else:
@@ -23,7 +23,7 @@ def solution(s):
                 cnt += 1
             else:
                 if(cnt == 1):
-                    reduced += keys[j-1] #1개여도 붙여줘야 함.
+                    reduced += keys[j-1] #need to add solo char
                     key = keys[j]
                     cnt = 1
                     continue
