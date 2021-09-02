@@ -9,6 +9,7 @@ query = ["java and backend and junior and pizza 100", "python and frontend and s
          "cpp and - and senior and pizza 250", "- and backend and senior and - 150", "- and - and - and chicken 100",
          "- and - and - and - 150"]
 
+import re
 from itertools import combinations
 
 def solution(info, query):
@@ -32,9 +33,21 @@ def solution(info, query):
     answer = []
     dict = {}
     option_dict = makeDict(info, dict)
-    print(option_dict)
 
+    for q in query:
+        num = 0
+        tmp = q.split()  # seperate
+        key = tmp[0:-1]  # info
+        searchScore = int(tmp[-1])  # target score
 
+        keyInfo = ''.join(key)
+        keyInfo = ''.join(re.sub("and|\-","",keyInfo)) # get key from info
+
+        if(keyInfo in option_dict):
+            for s in option_dict[keyInfo]:
+                if s >= searchScore:
+                    num += 1
+        answer.append(num)
     return answer
 
-solution(info, query)
+print(solution(info, query))
