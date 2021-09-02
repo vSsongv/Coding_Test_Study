@@ -1,4 +1,5 @@
 // https://programmers.co.kr/learn/courses/30/lessons/72411 [메뉴 리뉴얼]
+// 브루트 포스(brute force) 알고리즘 : 무식한 완전탐색 알고리즘!
 
 function combi(order, num) {
     let results = [];
@@ -14,8 +15,7 @@ function combi(order, num) {
     return results;
 }
 
-function solution(orders, course) {
-    let answer = [];
+function solution(orders, course) {    let answer = [];
     for (let i = 0; i < course.length; i++) {
         let dict = {};
         let max = 1; //초기값이 0이므로 1이상이면 2번이상 주문된것
