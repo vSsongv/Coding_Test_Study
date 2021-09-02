@@ -12,9 +12,7 @@ query = ["java and backend and junior and pizza 100", "python and frontend and s
 import re
 from itertools import combinations
 
-def solution(info, query):
-
-    def makeDict(infos, dict): # make 16(4*4) key
+def makeDict(infos, dict): # make 16(4*4) key
         for p in infos:  # for all info values
             tmp = p.split()  # seperate
             info= tmp[0:4]  # will be keys
@@ -28,8 +26,26 @@ def solution(info, query):
                     else:
                         dict[key] = []
                         dict[key].append(score) #value is score
+
+        for key in dict.keys():
+            dict[key].sort()
+
         return dict
 
+def lower_bound(nums, target):
+    left, right = 0, len(nums)
+
+    while left < right:  # left와 right가 만나는 지점이 target값 이상이 처음 나오는 위치
+        mid = int((right + left) / 2)
+
+        if nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid
+
+    return right
+
+def solution(info, query):
     answer = []
     dict = {}
     option_dict = makeDict(info, dict)
@@ -41,13 +57,14 @@ def solution(info, query):
         searchScore = int(tmp[-1])  # target score
 
         keyInfo = ''.join(key)
-        keyInfo = ''.join(re.sub("and|\-","",keyInfo)) # get key from info
+        keyInfo = re.sub("and|\-","",keyInfo) # get key from info
 
         if(keyInfo in option_dict):
-            for s in option_dict[keyInfo]:
-                if s >= searchScore:
-                    num += 1
+            index = lower_bound(option_dict[keyInfo], searchScore)
+            num = len(option_dict[keyInfo]) - index
+
         answer.append(num)
+
     return answer
 
 print(solution(info, query))
