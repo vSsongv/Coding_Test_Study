@@ -17,7 +17,7 @@ function combi(order, num) {
 function checkKey(keyArr, combiKey) {
     for(let k = 0; k < keyArr.length; k++) {
         let cnt = 0;
-        let keyEle = keyArr[k].split('_');
+        let keyEle = keyArr[k]
         keyEle.forEach((ele) => {
             if(combiKey.includes(ele)) cnt++;
         });
@@ -54,7 +54,7 @@ function solution(relation) {
                 }
                 if(check.length == row) {
                     let combiKey = '';
-                    combiKey = combination[k].join('_');
+                    combiKey = combination[k];
                     if(checkKey(keyArr, combiKey)) keyArr.push(combiKey);
                 }
             }
