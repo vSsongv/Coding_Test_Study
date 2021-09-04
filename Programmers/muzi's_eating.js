@@ -20,8 +20,6 @@ function solution(food_times, k) {
         if(i > foodNum-1) i = 0; //elecrticity is ok yet but rotated one food arr
     }
     
-    if(doneFood == foodNum) return -1;
-    
     if(food_times[i] == 0) {
         for(let j = 0; j < foodNum; j++) { //loop when 
             if(food_times[i] == 0) {
