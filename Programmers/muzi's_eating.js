@@ -40,5 +40,4 @@ function solution(food_times, k) {
         if(times.length == 0) return -1; //ate all food before shut down.
         foodNum -= 1;
     }
-    return -1; //ate all food after shut down
 }
