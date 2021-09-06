@@ -23,17 +23,22 @@ function solution(food_times, k) {
         times[i] = prio_times[i][1];
         priority[i] = Number(prio_times[i][0]);
     }
-    
+
     let sumOfTime = 0
     let differ = 0;
     while(times) {
         times[0] = times[0] - differ //update munimun val
         sumOfTime = times[0] * foodNum; //subtract minimum time from all time val
+        // console.log(sumOfTime)
+        // console.log(k)
+        // console.log(times)
         if(k < sumOfTime) { //shutdowned before eat all food
-            priority.sort(); //sort priority
+            priority.sort(); //sort priorit
             return priority[k % foodNum]+1; //return index+1
         }
         k = k - sumOfTime //update k
+            // console.log(priority)
+    
         differ += times[0]; //update difference
         times.shift(); //pop
         priority.shift(); //pop
