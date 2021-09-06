@@ -27,7 +27,6 @@ function solution(food_times, k) {
     let sumOfTime = 0
     let differ = 0;
     while(times) {
-        times[0] = times[0] - differ //update munimun val
         sumOfTime = times[0] * foodNum; //subtract minimum time from all time val
         // console.log(sumOfTime)
         // console.log(k)
@@ -42,6 +41,7 @@ function solution(food_times, k) {
         differ += times[0]; //update difference
         times.shift(); //pop
         priority.shift(); //pop
+        times[0] -= differ //update munimun val
         if(times.length == 0) return -1; //ate all food before shut down.
         foodNum -= 1;
     }
