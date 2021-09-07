@@ -2,4 +2,5 @@
 
 def solution(files):
     answer = []
+    files.split('.') #ext
     return answer
