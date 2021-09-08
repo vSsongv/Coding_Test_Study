@@ -3,8 +3,7 @@
 import re
 
 def solution(files):
-    answer = []
     splited = [re.split("([0-9]+)", file) for file in files]
-    sortedFiles = sorted(splited, key = lambda point: (point[0], point[1]))
-    print(sortedFiles)
-    return answer
+    sortedFiles = sorted(splited, key=lambda point: (point[0].lower(), int(point[1])))
+
+    return [''.join(fileName) for fileName in sortedFiles]
