@@ -1,12 +1,11 @@
 // https://programmers.co.kr/learn/courses/30/lessons/17683 [방금그곡]
 
 function changeFlatNote(note) {
-    for(let n = 0; n < note.length-1; n++) {
-        if(note[n+1] == "#") {
-            note = note.replace(note[n]+"#",note[n].toLowerCase());
-            n++;
-        }
-    }
+    note = note.replace(/(C#)/g, "c")
+    .replace(/(D#)/g, "d")
+    .replace(/(F#)/g, "f")
+    .replace(/(G#)/g, "g")
+    .replace(/(A#)/g, "a");
     return note
 }
 
@@ -45,7 +44,6 @@ function solution(m, musicinfos) {
                 answer = info[1];
             }
         }
-        console.log(info, m)
     }
     return answer;
 }
