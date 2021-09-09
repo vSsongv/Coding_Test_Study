@@ -1,5 +1,5 @@
 # https://programmers.co.kr/learn/courses/30/lessons/60060 [가사 검색]
-
+# efficiency check!!!
 def solution(words, queries):
     answer = []
     word_dict = {}
