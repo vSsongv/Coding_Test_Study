@@ -2,17 +2,12 @@
 
 function solution(food_times, k) {
     let foodNum = food_times.length;
-    var answer = 0;
-    let times_dict = {};
     let times = [];
     let priority = [];
-    for(let i = 0; i < foodNum; i++) {
-        times_dict[i] = food_times[i];
-    }
     
     let prio_times = [];
-    for(let time in times_dict) {
-        prio_times.push([time, times_dict[time]]);
+    for (let i = 0; i<foodNum; i++) {
+        prio_times.push([i, food_times[i]]);
     }
 
     prio_times.sort(function(a, b) {
@@ -21,28 +16,23 @@ function solution(food_times, k) {
     
     for(let i = 0; i < foodNum; i++) {
         times[i] = prio_times[i][1];
-        priority[i] = Number(prio_times[i][0]);
+        priority[i] = prio_times[i][0]+1;
     }
 
-    let sumOfTime = 0
+    let sumOfTime = 0;
     let differ = 0;
-    while(times) {
-        sumOfTime = times[0] * foodNum; //subtract minimum time from all time val
-        // console.log(sumOfTime)
-        // console.log(k)
-        // console.log(times)
-        if(k < sumOfTime) { //shutdowned before eat all food
-            priority.sort(); //sort priorit
-            return priority[k % foodNum]+1; //return index+1
-        }
-        k = k - sumOfTime //update k
-            // console.log(priority)
     
-        differ += times[0]; //update difference
-        times.shift(); //pop
-        priority.shift(); //pop
-        times[0] -= differ //update munimun val
-        if(times.length == 0) return -1; //ate all food before shut down.
-        foodNum -= 1;
+    for(let t = 0; t < foodNum; t++) {
+        differ = (t == 0) ? times[t] - 0 : times[t] - times[t-1];
+        sumOfTime = differ * (foodNum - t);
+        if(k < sumOfTime) { //shutdowned before eat all food
+            priority = priority.slice(t);
+            priority.sort(function(a, b) {
+                return a - b;
+            });
+            return priority[k % (foodNum - t)];
+        } 
+        k -= sumOfTime; //update k
     }
+    return -1; //ate all food before shut down.
 }
