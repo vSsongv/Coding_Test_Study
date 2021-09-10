@@ -57,7 +57,7 @@ class Trie(object):
 
 
 trie = Trie()
-word_list = ["cat", "front", "firefox", "fire"]
+word_list = ["frodo", "front", "frost", "frozen", "frame", "kakao"]
 for word in word_list:
     trie.insert(word)
 
