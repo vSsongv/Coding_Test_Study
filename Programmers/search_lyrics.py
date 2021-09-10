@@ -92,8 +92,8 @@ class Trie(object):
 
         return num
 
-
 def solution(words, queries):
+    qDict = {}
     answer = []
     trie = Trie()
     r_trie = Trie()  # revers trie
@@ -106,12 +106,17 @@ def solution(words, queries):
         r_trie.insert(w, len(w))
 
     for q in queries:
+        if q in qDict:
+            answer.append(qDict[q])
+            continue
         if q[0] == '?':
-            q = q[::-1]  # reverse
-            answer.append(r_trie.starts_with(q, len(q)))
+            result = r_trie.starts_with(q[::-1], len(q)) # reverse
+            qDict[q] = result
+            answer.append(result)
         else:
-            trie.starts_with(q, len(q))
-            answer.append(trie.starts_with(q, len(q)))
+            result = trie.starts_with(q, len(q))
+            qDict[q] = result
+            answer.append(result)
 
     return answer
 
