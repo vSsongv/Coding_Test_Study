@@ -34,7 +34,7 @@ def solution(n, info):
 
         if gap <= (Rscore - Ascore):
             gap = (Rscore - Ascore) #gap update
-            # print(tmp)
+            print(tmp)
             if tmp not in canWin:
                 canWin.append(tmp)
         arrow = n
