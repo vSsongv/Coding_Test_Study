@@ -18,9 +18,9 @@ def solution(n, build_frame):
         x,y,what,how = frame
         
         if how == 1: #build
-            answer.append([x,y,what])
-            if check(answer) is False:
-                answer.remove([x,y,what])
+            answer.append([x,y,what]) #일단 append한 후, 
+            if check(answer) is False: #조건에 부합하는지 확인하고
+                answer.remove([x,y,what]) #부합하지 않으면 무시
         else: #delete
             answer.remove([x,y,what])
             if check(answer) is False:
