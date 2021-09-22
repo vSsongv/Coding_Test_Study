@@ -1,9 +1,9 @@
 //https://programmers.co.kr/learn/courses/30/lessons/76502# [괄호 회전하기]
 
 let pair = { '(':')', '{':'}', '[':']' }
-let check = []
 
 function isVaild(arr) {
+    let check = [];
     for(let i = 0; i < arr.length; i++){
         if(arr[0] == ')' || arr[0] == '}' || arr[0] == ']') return false
         if(arr[i] in pair) {
