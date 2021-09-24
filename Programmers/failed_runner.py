@@ -10,3 +10,11 @@ def solution(participant, completion):
     for p in range(len(participant)):
         if participant[p] != completion[p]:
             return participant[p]
+
+# collections과 Counter를 이용한 풀이
+import collections
+
+
+def solution(participant, completion):
+    answer = collections.Counter(participant) - collections.Counter(completion)
+    return list(answer.keys())[0] #list로 형변환 중요
