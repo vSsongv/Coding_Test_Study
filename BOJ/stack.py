@@ -22,14 +22,15 @@ class Stack:
             return -1
         return stack[-1]
 
+import sys
+
 n = int(input())
 
 Stack = Stack()
 stack = []
 
 for _ in range(n):
-    orders = input()
-    order = orders.split(" ")
+    order = list(map(str,sys.stdin.readline().split()))
     if order[0] == 'push':
         Stack.push(order[1], stack)
     elif order[0] == 'pop':
