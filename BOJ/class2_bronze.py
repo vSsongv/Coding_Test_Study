@@ -30,19 +30,34 @@
 #         print('0')
 
 # https://www.acmicpc.net/problem/2798 [블랙잭]
+# import sys
+#
+# N,M = map(int,sys.stdin.readline().split())
+# cards = list(map(int, sys.stdin.readline().split()))
+# sum = 0
+#
+# for i in range(N-2):
+#     for j in range(i+1, N-1):
+#         for k in range(j+1, N):
+#             if cards[i]+cards[j]+cards[k] <= M and cards[i]+cards[j]+cards[k] > sum:
+#                 sum = cards[i]+cards[j]+cards[k]
+# print(sum)
+
+# https://www.acmicpc.net/problem/11050 [이항 계수]
 import sys
 
-N,M = map(int,sys.stdin.readline().split())
-cards = list(map(int, sys.stdin.readline().split()))
-sum = 0
+N,K = map(int,sys.stdin.readline().split())
+top = 1
+bottom = 1
+minus = 1
+for n in range(N,0,-1):
+    top *= n
+for k in range(K,0,-1):
+    bottom *= k
+for m in range(N-K,0,-1):
+    minus *= m
 
-for i in range(N-2):
-    for j in range(i+1, N-1):
-        for k in range(j+1, N):
-            if cards[i]+cards[j]+cards[k] <= M and cards[i]+cards[j]+cards[k] > sum:
-                sum = cards[i]+cards[j]+cards[k]
-print(sum)
-
+print(int(top / (bottom * minus)))
 
 
 
