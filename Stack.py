@@ -1,5 +1,3 @@
-# https://www.acmicpc.net/problem/10828 [스택]
-
 class Stack:
     def push(self, num, stack):
         stack.append(num)
