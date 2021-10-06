@@ -1,3 +1,12 @@
+const fs = require('fs');
+//백준 제출시 여기 주석 풀기
+const readFileSyncAdress = '/dev/stdin';
+//로컬 테스트 시 여기 주석 풀기
+const readFileSyncAdress = 'input.txt';
+
+let input = fs.readFileSync(readFileSyncAdress).toString().trim().split(' ');
+input = input[0];
+
 //1줄 입력
 const readline = require("readline");
 const rl = readline.createInterface({
