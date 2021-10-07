@@ -15,16 +15,25 @@
 // ▣ 반환값 형식 1
 // [6, -2, -13]
 
+// function solution(nums, m){
+//     for(let i = 0; i < m; i++) {
+//         let newArr = [];
+//         for(let j = 0; j < nums.length-1; j++) {
+//             newArr.push(nums[j+1]-nums[j]); //newArr에 계산된 값들 push해주고
+//         }
+//         nums = newArr; //nums를 newArr로 바꿔준다.
+//     }
+//     return nums;
+// }
+
 function solution(nums, m){
     for(let i = 0; i < m; i++) {
-        let newArr = [];
-        for(let j = 0; j < nums.length-1; j++) {
-            newArr.push(nums[j+1]-nums[j]); //newArr에 계산된 값들 push해주고
+        for(let j = 0; j < nums.length-i-1; j++) {
+            nums[j] = nums[j+1]-nums[j]; //newArr에 계산된 값들 push해주고
         }
-        nums = newArr; //nums를 newArr로 바꿔준다.
     }
-    return nums;
+    return nums.slice(0, nums.length-m);
 }
 
-// console.log(solution([5, 3, 7, 9, -2], 1));
-console.log(solution([5, 3, 7, 9, -2], 2));
+console.log(solution([5, 3, 7, 9, -2], 1));
+// console.log(solution([5, 3, 7, 9, -2], 2));
