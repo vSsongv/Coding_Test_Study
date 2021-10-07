@@ -1,4 +1,4 @@
-// https://www.acmicpc.net/problem/5622
+// https://www.acmicpc.net/problem/5622 [다이얼]
 
 const dial = { 'A': 3, 'B':3, 'C': 3, 'D':4, 'E':4, 'F': 4,
  'G':5, 'H':5, 'I': 5, 'J':6, 'K':6, 'L': 6,
