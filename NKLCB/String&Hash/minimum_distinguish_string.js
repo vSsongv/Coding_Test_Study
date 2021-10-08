@@ -29,7 +29,20 @@ function solution(s) {
         }
         if(flag == true)  return i; //전부 다 돌았는데 true면 지금 자른 개수로 비교 가능.
     }
+
 }
 
-// console.log(solution(["seeasue", "sasseysu", "semeas"]));
+// set으로 풀이한 방법
+function solution(s) {
+    for(let i = 1; i < s[0].length; i++) { //그 문자열을 한 글자씩 자르면서
+        let strSet = new Set();
+        for(let j = 0; j < s.length; j++) {
+            strSet.add(s[j].substring(0,i)); //set에 넣는다.
+        }
+        if(strSet.size == s.length)  return i; //만약 set의 원소 개수가 s의 개수와 같다면 비교 가능한 상태이다.
+    }
+    return 
+}
+
+console.log(solution(["seeasue", "sasseysu", "semeas"]));
 console.log(solution(["ackky", "kabck", "yokkcs"]));
