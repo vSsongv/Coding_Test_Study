@@ -30,7 +30,7 @@ function solution(nums, m) {
           sum += nums[right++]; //합이 M보다 작다면 sum에 end까지의 값을 더해주고, end를 증가시켜주자.
         }
         if (sum === m) answer++; //합이 M이 되면 answer를 ++시켜주고
-        sum -= nums[left];
+        sum -= nums[left]; //현재 left의 값을 빼준뒤, left를 증가시킨다.
       }
     return answer;
 }
