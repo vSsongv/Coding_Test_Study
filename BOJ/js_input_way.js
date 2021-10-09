@@ -1,3 +1,10 @@
+
+//백준제출시 주석
+// let Path = "input.txt"
+//로컬 테스트시 주석
+let Path = "/dev/stdin"
+const [num, target, ...arr] = require("fs").readFileSync(Path).toString().trim().split(/\s/).map(v => +v);
+// --------------------------------------------------------------
 const fs = require('fs');
 //백준 제출시 여기 주석 풀기
 const readFileSyncAdress = '/dev/stdin';
