@@ -42,10 +42,10 @@ function solution(num) {
     let answer = 0;
     cnt = 1;
     num -= 1;
-    while(num > 0) {
-        cnt++;
-        num -= cnt;
-        if(num % cnt == 0) answer += 1;
+    while(num > 0) { //num이 0보다 큰 경우에,
+        cnt++; //해당 숫자를 cnt개의 합으로 표현할지를 정해서
+        num -= cnt; //num에서 cnt개를 빼준 후
+        if(num % cnt == 0) answer += 1; //만약 cnt개로 나눈 값을 똑같이 나눠줄 수 있으면 num을 만들 수 있음.
     }
     return answer;
 }
