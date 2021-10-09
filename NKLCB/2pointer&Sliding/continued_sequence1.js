@@ -27,8 +27,7 @@ function solution(nums, m) {
 
     for (let left = 0; left < nums.length; left++) {
         while (sum < m && right < nums.length) { //합이 M보다 크거나, end가 배열의 마지막이면 loop를 멈춰야 한다.
-          sum += nums[right]; //합이 M보다 작다면 sum에 end까지의 값을 더해주고, 
-          right++; //end를 증가시켜주자.
+          sum += nums[right++]; //합이 M보다 작다면 sum에 end까지의 값을 더해주고, end를 증가시켜주자.
         }
         if (sum === m) answer++; //합이 M이 되면 answer를 ++시켜주고
         sum -= nums[left];
@@ -51,3 +50,4 @@ function solution(nums, m) {
 
 console.log(solution([1, 2, 1, 3, 1, 1, 1, 2], 6));
 console.log(solution([1, 1, 1, 1, 1, 1], 3));
+console.log(solution([1, 2, 1, 2, 1, 2, 1], 3));
