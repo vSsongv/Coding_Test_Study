@@ -17,19 +17,25 @@
 // 3
 
 function solution(s, t) {
-    let left = 0, right = 0, answer = 0;
+    let answer = 0;
     let stringHash = new Map();
 
-    for(let s of t) stringHash.set(s, 0);
+    for(let s of t) stringHash.set(s, (stringHash.get(s) || 0) - 1);
 
-    for(let i = 0; i < t.length-1; i++) {
-        stringHash.set(s[i], (stringHash.get(s[i] || 0)+1));
-        if(stringHash.get(s[i]===0)) stringHash.delete(s[i]);
+    let len = t.length - 1;
+
+    for(let i = 0; i < len; i++) {
+        stringHash.set(s[i], (stringHash.get(s[i]) || 0)+1);
+        if(stringHash.get(s[i]) === 0) stringHash.delete(s[i]);
     }
-    for(right = 0; right < s.length; right++) {
-        stringHash.set(s[left], (stringHash.get(s[right]) || 0)+1);
-        if(stringHash.get(s[right]===0)) stringHash.delete(s[right]);
+
+    let left = 0;
+    for(let right = len; right < s.length; right++) {
+        stringHash.set(s[right], (stringHash.get(s[right]) || 0)+1);
+        if(stringHash.get(s[right]) === 0) stringHash.delete(s[right]);
+
         if(stringHash.size===0) answer += 1;
+
         stringHash.set(s[left], (stringHash.get(s[left]) || 0)-1);
         if(stringHash.get(s[left])==0) stringHash.delete(s[left]);
         left += 1;
