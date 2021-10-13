@@ -20,8 +20,8 @@
 function solution(s) {
     let stack = [];
     for(let a of s) {
-        if(a === stack[stack.length-1]) {
-            stack.pop();
+        if(a === stack[stack.length-1]) { //지금 넣으려는 애가 stack의 맨 위에 있는 애랑 똑같으면(겹치면)
+            stack.pop(); //제거해주기
         }
         else {
             stack.push(a);
