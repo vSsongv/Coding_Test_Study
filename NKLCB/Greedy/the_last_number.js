@@ -22,66 +22,98 @@
 // ▣ 반환값 형식 1
 // 0
 
-class maxHeap {
+class Heap {
     constructor() {
         this.heap = [];
-        this.heap.push(1e9);
+    }
+    //값을 서로 바꾸는 메소드
+    swap(index1, index2) {
+        let temp = this.heap[index1]; // heap의 index1의 값을 temp(임시공간)에 담음
+        this.heap[index1] = this.heap[index2]; // index1에 index2의 값을 저장
+        this.heap[index2] = temp; // index2에 아까 index1의 값을 temp에 넣어놓은 값을 저장
+    }
+    //부모 인덱스 구하는 메소드
+    parentIndex(myIdx) {
+        return Math.floor((myIdx - 1) / 2);
+    }
+    //왼쪽 자식 인덱스 구하는 메소드
+    leftChildIndex(myIdx) {
+        return myIdx * 2 + 1;
+    }
+    //오른쪽 자식 인덱스 구하는 메소드
+    rightChildIndex(myIdx) {
+        return myIdx * 2 + 2;
+    }
+    //부모 노드 값 구하는 메소드
+    getParentVal(myIdx) {
+        return this.heap[this.parentIndex(myIdx)];
+    }
+    //왼쪽 자식 노드 값 구하는 메소드
+    getLeftChilVal(myIdx) {
+        return this.heap[this.leftChildIndex(myIdx)];
+    }
+    //오른쪽 자식 노드 값 구하는 메소드
+    getRightChildVal(myIdx) {
+        return this.heap[this.rightChildIndex(myIdx)];
+    }
+    //최대 힙의 경우 최댓값을 반환하고 최소 힙의 경우 최솟값을 반환하는 메소드
+    getPeek() {
+        return this.heap[0];
+    }
+    //힙의 크기(항목 개수)를 반환하는 메소드
+    getSize() {
+        return this.heap.length;
+    }
+}
+
+class MaxHeap extends Heap {
+    UpHeap(lastIdx) {
+        let index = lastIdx;
+        while(this.getParentVal(index) < this.heap[index]) { //부모 노드의 값이 나보다 클때까지 반복.
+            this.swap(index, this.parentIndex(index));  //swap진행
+            index = this.parentIndex(index); //index값 update
+        } 
     }
 
-    upHeap(pos) {
-        let tmp = this.heap[pos];
-        while(tmp > this.heap[parseInt(pos/2)]) {
-            this.heap[pos] = this.heap[parseInt(pos/2)];
-            pos = parseInt(pos/2);
+    downHeap(firstIdx) {
+        let index = firstIdx;
+        while(this.getLeftChilVal(index) !== undefined && (this.getLeftChilVal(index) > this.heap[index] || this.getRightChildVal(index) > this.heap[index])) { //내가 자식 노드보다 작다면 바꿔줘야함.
+            let biggerIndex = this.leftChildIndex(index);
+            if(this.getRightChildVal(index) !== undefined && this.getRightChildVal(index) > this.heap[biggerIndex]) biggerIndex = this.rightChildIndex(index); //오른쪽자식이 크면 오른쪽거로 update
+            this.swap(index, biggerIndex); //swap 진행
+            index = biggerIndex; //index값 update
         }
-        this.heap[pos] = tmp;
-    }
-
-    downHeap(pos, len) {
-        let tmp = this.heap[pos], child;
-        while(pos <= parseInt(len/2)) {
-            child = pos * 2;
-            if(child < len && this.heap[child] < this.heap[child+1]) child += 1;
-            if(tmp >= this.heap[child]) break;                                                       
-            this.heap[pos] = this.heap[child];
-            pos = child;
-        }
-        this.heap[pos] = tmp;
     }
 
     insert(val) {
         this.heap.push(val);
-        this.upHeap(this.heap.length-1);
+        this.UpHeap(this.heap.length - 1);
     }
 
     getTop() {
-        if(this.heap.length === 2) return this.heap.pop();
-        if(this.heap.length === 1) return 0;
-        let peak = this.heap[1]; //최대값
-        this.heap[1] = this.heap.pop(); //맨 끝 노드를 root에 넣고
-        this.downHeap(1, this.heap.length-1); //downHeap실행
-        return peak;
-    }
-
-    getSize() {
-        return this.heap.length-1;
+        if(this.getSize() === 0) return "Heap is empty";
+        let top = this.getPeek();
+        this.heap[0] = this.heap[this.getSize()-1];//마지막 원소를 top에 넣어준다.
+        this.heap.pop();
+        this.downHeap(0);
+        return top;
     }
 }
 
 function solution(nums) {
-    let MaxHeap = new maxHeap();
+    let maxheap = new MaxHeap();
     for(let i = 0; i < nums.length; i++) {
-        MaxHeap.insert(nums[i]);
+        maxheap.insert(nums[i]);
     }
-    while(MaxHeap.getSize() > 1) {
-        let top1 = MaxHeap.getTop();
-        let top2 = MaxHeap.getTop();
+    while(maxheap.getSize() > 1) {
+        let top1 = maxheap.getTop();
+        let top2 = maxheap.getTop();
         if(top1 != top2) {
-            MaxHeap.insert(Math.abs(top1-top2));
+            maxheap.insert(Math.abs(top1-top2));
         }
     }
-    if(MaxHeap.getSize() === 0) return 0;
-    else return MaxHeap.getTop();
+    if(maxheap.getSize() === 0) return 0;
+    else return maxheap.getTop();
 }
 
 console.log(solution([5, 2, 4, 3, 1]));
