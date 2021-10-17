@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/2109 [순회 강연]
+
 import heapq
 
 n = int(input())
