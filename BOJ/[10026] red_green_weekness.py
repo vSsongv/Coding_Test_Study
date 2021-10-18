@@ -1,3 +1,6 @@
+# https://www.acmicpc.net/problem/10026 [적록색약]
+# need to study
+
 import sys
 sys.setrecursionlimit(1000000)
 input = sys.stdin.readline
