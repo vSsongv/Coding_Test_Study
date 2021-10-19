@@ -19,25 +19,22 @@
 // 200
 // 예제설명) 802cm 랜선에서 4개, 743cm 랜선에서 3개, 457cm 랜선에서 2개, 539cm 랜선에서 2개를 잘라내 모두 11개를 만들 수 있다.
 
+function count(len) {
+    let cnt = 0;
+    for(let x of nums) { 
+        cnt += Math.floor(x/len); //각 랜선 길이를 len으로 잘랐을 때 생성되는 랜선 총 개수
+    }
+    return cnt;
+}
+
 function solution(nums, target) {
     let left = 1, right = Math.max(...nums);
     let answer = 0;
-
-    function count(len) {
-        let cnt = 0;
-        for(let x of nums) { 
-            cnt += Math.floor(x/len); //각 랜선 길이를 len으로 잘랐을 때 생성되는 랜선 총 개수
-        }
-        return cnt;
-    }
     while(left < right) { //left가 right보다 작을 때까지
         let mid = parseInt((left+right)/2); //중간 길이
-        console.log(mid);
         if(count(mid) >= target) { //잘라진 랜선의 총 개수가 target개수보다 크거나 같으면
-            console.log("c",count(mid));
             answer = mid; //일단 정답이 될 수 있다.
             left = mid+1; //더 큰 길이로 자를 수 있는지 확인하기 위해 left값 update.
-            console.log("left",left);
         }
         else right = mid;  //잘라진 랜선 길이가 target 개수보다 작으면 더 짧게 잘라야 함.
     }
