@@ -15,15 +15,20 @@
 
 function solution(nums, target) {
     nums.sort((a,b) => a-b);
-    let left = 0, right = nums.length;
+    let answer = 0;
+    let left = 0, right = nums.length-1;
 
-    while(left < right) { // left와 right가 만나는 지점이 target값 이상이 처음 나오는 위치
+    while(left <= right) { // left와 right가 만나는 지점이 target값 이상이 처음 나오는 위치
         let mid = parseInt((right + left) / 2);
-        if(nums[mid] < target) left = mid + 1;
-        else right = mid;
+        if(nums[mid] === target){
+            answer = mid + 1;
+            break;
+        }
+        else if(nums[mid] > target) right = mid - 1;
+        else left = mid + 1;
     }  
-    return right+1;
+    return answer;
 }
 
-console.log(solution([23, 87, 65, 12, 57, 32, 99, 81], 99));
+console.log(solution([23, 87, 65, 12, 57, 32, 99, 81], 32));
 console.log(solution([10,20,30,40,50], 40));
