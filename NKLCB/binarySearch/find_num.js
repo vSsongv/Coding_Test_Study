@@ -25,4 +25,5 @@ function solution(nums, target) {
     return right+1;
 }
 
-console.log(solution([23, 87, 65, 12, 57, 32, 99, 81], 32));
+console.log(solution([23, 87, 65, 12, 57, 32, 99, 81], 99));
+console.log(solution([10,20,30,40,50], 40));
