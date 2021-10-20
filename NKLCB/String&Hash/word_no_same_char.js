@@ -1,5 +1,4 @@
-// N개의 문자열이 주어지면 서로 공통문자가 없는 두 문자열을 선택해 두 문자열의 길이를 곱했
-// 을 때 최댓값을 출력하는 프로그램을 작성하세요.
+// N개의 문자열이 주어지면 서로 공통문자가 없는 두 문자열을 선택해 두 문자열의 길이를 곱했을 때 최댓값을 출력하는 프로그램을 작성하세요.
 // ▣ 입력설명
 // 매개변수 words에 N(3<=N<=100)개의 문자열이 주어집니다. 각 문자열의 길이는 1000을 넘
 // 지 않습니다.
@@ -28,12 +27,11 @@ function solution(words) {
     for (let i = 0; i < words.length - 1; i++) {
         for (let j = 0; j < words.length; j++) {
             if (isUnique(words[i], words[j])) {
-                let tmp = words[i].length * words[j].length;
-                answer = Math.max(answer, tmp);
+                answer = Math.max(answer, (words[i].length * words[j].length));
             }
         }
-        return answer
     }
+    return answer;
 }
 
 console.log(solution(["skudy", "kstue", "time", "back", "good"]))
