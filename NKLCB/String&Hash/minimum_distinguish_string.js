@@ -19,29 +19,27 @@
 function solution(s) {
     let flag = false;
     s.sort((a, b) => a.length - b.length); //제일 길이가 짧은 문자열을 기준으로 정렬하고
-    console.log(s);
-    for(let i = 1; i < s[0].length; i++) { //그 문자열을 한 글자씩 자르면서
-        let target = s[0].substring(0,i);
-        for(let j = 1; j < s.length; j++) {
-            console.log(target);
-            if(target != s[j].substring(0,i)) flag = true; //다른 문자열을 같은 길이로 자른 값들과 비교한다.
+    for (let i = 1; i < s[0].length; i++) { //그 문자열을 한 글자씩 자르면서
+        let target = s[0].substring(0, i);
+        for (let j = 1; j < s.length; j++) {
+            if (target != s[j].substring(0, i)) flag = true; //다른 문자열을 같은 길이로 자른 값들과 비교한다.
             else break; //비교 불가 대상이 있으면 반복문을 빠져나가서 다음 target으로 비교한다.
         }
-        if(flag == true)  return i; //전부 다 돌았는데 true면 지금 자른 개수로 비교 가능.
+        if (flag == true) return i; //전부 다 돌았는데 true면 지금 자른 개수로 비교 가능.
     }
 
 }
 
 // set으로 풀이한 방법
 function solution(s) {
-    for(let i = 1; i < s[0].length; i++) { //그 문자열을 한 글자씩 자르면서
+    for (let i = 1; i < s[0].length; i++) { //그 문자열을 한 글자씩 자르면서
         let strSet = new Set();
-        for(let j = 0; j < s.length; j++) {
-            strSet.add(s[j].substring(0,i)); //set에 넣는다.
+        for (let j = 0; j < s.length; j++) {
+            strSet.add(s[j].substring(0, i)); //set에 넣는다.
         }
-        if(strSet.size == s.length)  return i; //만약 set의 원소 개수가 s의 개수와 같다면 비교 가능한 상태이다.
+        if (strSet.size == s.length) return i; //만약 set의 원소 개수가 s의 개수와 같다면 비교 가능한 상태이다.
     }
-    return 
+    return
 }
 
 console.log(solution(["seeasue", "sasseysu", "semeas"]));
