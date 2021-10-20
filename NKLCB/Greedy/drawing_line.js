@@ -26,7 +26,7 @@ function solution(nums) {
     for(let i = 1; i < nums.length; i++) {
         if(nums[i][0] <= end && nums[i][1] > end) { //앞의 구간과 겹친다면
             nums[i][0] = nums[i-1][0]; //현재 좌표의 x좌표만 바꿔줌
-        }
+        } 
         else if(nums[i][0] > end){ //겹치지 않는다면
             answer += (end-start); //asnwer에 앞의 구간 길이를 더해줌
             start = nums[i][0]; 

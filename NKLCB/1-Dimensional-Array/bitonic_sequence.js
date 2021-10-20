@@ -25,10 +25,10 @@ function solution(nums) {
     let n = nums.length;
     let i = 0;
 
-    while(i+1 < n && nums[i] < nums[i+1]) i++;
-    if(i === 0 || i === n-1) answer = "NO";
-    while(i+1 < n && nums[i] > nums[i+1]) i++;
-    if(i !== n-1) answer = "NO";
+    while (i + 1 < n && nums[i] < nums[i + 1]) i++;
+    if (i === 0 || i === n - 1) answer = "NO";
+    while (i + 1 < n && nums[i] > nums[i + 1]) i++;
+    if (i !== n - 1) answer = "NO";
     return answer;
 }
 

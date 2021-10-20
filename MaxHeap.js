@@ -45,17 +45,17 @@ class Heap {
 class MaxHeap extends Heap {
     UpHeap(lastIdx) {
         let index = lastIdx;
-        while(this.getParentVal(index) < this.heap[index]) { //부모 노드의 값이 나보다 클때까지 반복.
+        while (this.getParentVal(index) < this.heap[index]) { //부모 노드의 값이 나보다 클때까지 반복.
             this.swap(index, this.parentIndex(index));  //swap진행
             index = this.parentIndex(index); //index값 update
-        } 
+        }
     }
 
     downHeap(firstIdx) {
         let index = firstIdx;
-        while(this.getLeftChilVal(index) !== undefined && (this.getLeftChilVal(index) > this.heap[index] || this.getRightChildVal(index) > this.heap[index])) { //내가 자식 노드보다 작다면 바꿔줘야함.
+        while (this.getLeftChilVal(index) !== undefined && (this.getLeftChilVal(index) > this.heap[index] || this.getRightChildVal(index) > this.heap[index])) { //내가 자식 노드보다 작다면 바꿔줘야함.
             let biggerIndex = this.leftChildIndex(index);
-            if(this.getRightChildVal(index) !== undefined && this.getRightChildVal(index) > this.heap[biggerIndex]) biggerIndex = this.rightChildIndex(index); //오른쪽자식이 크면 오른쪽거로 update
+            if (this.getRightChildVal(index) !== undefined && this.getRightChildVal(index) > this.heap[biggerIndex]) biggerIndex = this.rightChildIndex(index); //오른쪽자식이 크면 오른쪽거로 update
             this.swap(index, biggerIndex); //swap 진행
             index = biggerIndex; //index값 update
         }
@@ -67,12 +67,62 @@ class MaxHeap extends Heap {
     }
 
     getTop() {
-        if(this.getSize() === 0) return "Heap is empty";
+        if (this.getSize() === 0) return "Heap is empty";
         let top = this.getPeek();
-        this.heap[0] = this.heap[this.getSize()-1];//마지막 원소를 top에 넣어준다.
+        this.heap[0] = this.heap[this.getSize() - 1];//마지막 원소를 top에 넣어준다.
         this.heap.pop();
         this.downHeap(0);
         return top;
+    }
+}
+
+class maxHeap {
+    constructor() {
+        this.heap = [];
+        this.heap.push(Number.MAX_SAFE_INTEGER);
+    }
+    insert(val) {
+        this.heap.push(val);
+        this.upheap(this.heap.length - 1);
+    }
+    upheap(pos) {
+        let tmp = this.heap[pos];
+        while (tmp > this.heap[parseInt(pos / 2)]) {
+            this.heap[pos] = this.heap[parseInt(pos / 2)];
+            pos = parseInt(pos / 2);
+        }
+        this.heap[pos] = tmp;
+    }
+    get() {
+        if (this.heap.length === 2) {
+            return this.heap.pop();
+        }
+        let res;
+        res = this.heap[1];
+        this.heap[1] = this.heap.pop();
+        this.downheap(1, this.heap.length - 1);
+        return res;
+    }
+    downheap(pos, len) {
+        let tmp, i;
+        tmp = this.heap[pos];
+        while (pos <= parseInt(len / 2)) {
+            i = pos * 2;
+            if (i < len && this.heap[i] < this.heap[i + 1]) i++;
+            if (tmp >= this.heap[i]) break;
+            this.heap[pos] = this.heap[i];
+            pos = i;
+        }
+        this.heap[pos] = tmp;
+    }
+    size() {
+        return this.heap.length - 1;
+    }
+    show() {
+        for (let i = 1; i <= this.size(); i++) {
+            console.log(this.heap[i]);
+        }
+        return true;
     }
 }
 
@@ -89,5 +139,5 @@ console.log(maxheap.getTop()); // 5
 console.log(maxheap.getTop()); // 8
 console.log(maxheap.getTop()); // 10
 console.log(maxheap.getTop()); // 100
-console.log(maxheap.getTop()); 
+console.log(maxheap.getTop());
 console.log(maxheap); // array(0)
