@@ -23,8 +23,7 @@ function solution(s) {
         if (s[left] !== s[right]) {
             let sub1 = s.substring(left, right);
             let sub2 = s.substring(left + 1, right + 1);
-            console.log(sub1, sub2);
-            if (sub1 !== sub1.split("").reverse().join("") && sub2 !== sub2.split("").reverse().join("")) {
+            if (sub1 !== sub1.split("").reverse().join("") && sub2 !== sub2.split("").reverse().join("")) { //잘라서 reverse한 애들 중 pelindrom이 있으면, 아닌 애 쪽에서 하나 빼면 된다는 의미.
                 answer = "NO";
                 break;
             }
@@ -34,4 +33,4 @@ function solution(s) {
     return answer;
 }
 
-console.log(solution("abcbdcba"));
+console.log(solution("abcacbakcba"));
