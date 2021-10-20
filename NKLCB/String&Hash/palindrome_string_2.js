@@ -18,13 +18,14 @@
 
 function solution(s) {
     let answer = "YES";
-    let left = 0; let right = s.length-1;
-    while(left < right) {
-        if(s[left]!==s[right]) {
-            let sub1 = s.substring(left,right);
-            let sub2 = s.substring(left+1, right+1);
-            if(sub1 !== sub1.split("").reverse().join("") && sub2 !== sub2.split("").reverse().join("")) {
-                answer = "NO";  
+    let left = 0; let right = s.length - 1;
+    while (left < right) {
+        if (s[left] !== s[right]) {
+            let sub1 = s.substring(left, right);
+            let sub2 = s.substring(left + 1, right + 1);
+            console.log(sub1, sub2);
+            if (sub1 !== sub1.split("").reverse().join("") && sub2 !== sub2.split("").reverse().join("")) {
+                answer = "NO";
                 break;
             }
         }
@@ -33,4 +34,4 @@ function solution(s) {
     return answer;
 }
 
-console.log(solution("abcabbakcba"));
+console.log(solution("abcbdcba"));
