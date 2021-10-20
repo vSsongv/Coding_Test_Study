@@ -16,7 +16,6 @@ function solution(n) {
     function getSubset(e) {
         if(e === n+1) {
             answer.push(subset.slice());
-            console.log(answer);
         }
         else {
             subset.push(e);

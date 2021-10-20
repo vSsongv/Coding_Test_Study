@@ -36,4 +36,3 @@ function solution(coins, target) {
 // }
 
 console.log(solution([1, 5, 10], 15));
-console.log(solution([1, 9, 12], 27));
