@@ -25,11 +25,12 @@
 
 function solution(nums, k) {
     let answer = 0, sum = 0;
-    for(let i = 0; i < k; i++) sum += nums[i]; //처음 k개의 합을 sum에 setting해 둔다.
+    for (let i = 0; i < k; i++) sum += nums[i]; //처음 k개의 합을 sum에 setting해 둔다.
     answer = sum;
-    for(let j = k; j < nums.length; j++) {
-        sum += (nums[j] - nums[j-k]); //새로 더할 값에서 j-k index의 값을 빼 준 뒤 원래의 값에 더해주면 맨 처음 값을 빼고 j번째 index값을 더한 효과를 낸다.
-        answer = Math.max(sum, answer); 
+    for (let j = k; j < nums.length; j++) {
+        sum += (nums[j] - nums[j - k]); //새로 더할 값에서 j-k index의 값을 빼 준 뒤 원래의 값에 더해주면 맨 처음 값을 빼고 j번째 index값을 더한 효과를 낸다.
+        //12+15+11 -> 15+11+20으로 하고자 할 때 결국 15+11-12+20이므로 20-12의 값인 8을 15+11에 더한 값과 같다.
+        answer = Math.max(sum, answer);
     }
     return answer;
 }
