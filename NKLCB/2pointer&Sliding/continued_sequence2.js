@@ -26,12 +26,14 @@ function solution(nums, m) {
     let answer = 0, sum = 0;
     let numHash = new Map();
 
-    for(let i = 0; i < nums.length; i++) {   
-        sum += nums[i]; //sum에 nums[i]값을 더해주고 
-        if(sum === m) answer += 1;
-        if(numHash.has(sum-m)) answer += numHash.get(sum-m); 
-        numHash.set(sum, (numHash.get(sum) || 0) + 1);  
-    } 
+    for (let i = 0; i < nums.length; i++) {
+        sum += nums[i]; //sum에 nums[i]값을 더해주고
+        if (sum === m) answer += 1;
+        if (numHash.has(sum - m)) answer += numHash.get(sum - m);
+        //hash에 sum-m 한 값이 있다는 것은, sum에서 sum-m를 빼면 m이므로
+        //지금까지의 sum에서 sum-m을 제거한 애들로 val개만큼 m을 만들 수 있다는 의미.
+        numHash.set(sum, (numHash.get(sum) || 0) + 1);
+    }
     return answer;
 }
 
