@@ -8,12 +8,12 @@ const [num, target, ...arr] = require("fs").readFileSync(Path).toString().trim()
 let answer = 0, sum = 0;
 
 let right = 0;
-for(let left = 0; left < num; left++) {
-    while(sum < target && right < num) {
+for (let left = 0; left < num; left++) {
+    while (sum < target && right < num) {
         sum += arr[right++];
     }
-    if(sum == target) answer += 1;
+    if (sum == target) answer += 1;
     sum -= arr[left];
-} 
+}
 
 console.log(answer);
