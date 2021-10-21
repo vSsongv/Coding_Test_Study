@@ -23,30 +23,16 @@
 // ▣ 반환값 형식 3
 // 22
 
-// function solution(nums, m) {
-//     let answer = 0, sum = 0, right = 0;
-
-//     for (let left = 0; left < nums.length; left++) {
-//         while (sum <= m && right < nums.length) { //합이 M보다 크거나, end가 배열의 마지막이면 loop를 멈춰야 한다.
-//           sum += nums[right]; //합이 M보다 작다면 sum에 end까지의 값을 더해주고, 
-//           right++; //end를 증가시켜주자.
-//           answer++;
-//         }
-//         sum -= nums[left];
-//       }
-//     return answer;
-// }
-
 function solution(nums, m) {
     let left = 0; let answer = 0; let sum = 0;
-        for (let right = 0; right < nums.length; right++) {
-            sum += nums[right]; //sum에 end까지의 값을 더해주고,
-            while (sum > m) {
-                sum -= nums[left++];
-            }
-            answer += right - left + 1;
+    for (let right = 0; right < nums.length; right++) {
+        sum += nums[right]; //sum에 end까지의 값을 더해주고,
+        while (sum > m) { //sum이 m보다 커지면
+            sum -= nums[left++]; //함께 갈 수 없는 left값들을 빼준다.
         }
-        return answer;
+        answer += right - left + 1; //right - left + 1이 right까지 합이 m 이하의 경우의 개수
+    }
+    return answer;
 }
 
 console.log(solution([1, 3, 1, 2, 3], 5));
