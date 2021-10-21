@@ -10,7 +10,7 @@
 
 function solution(s) {
     let answer = [];
-    for(let i = 0; i < s.length; i++) answer.push(s.slice(i,s.length));
+    for (let i = 0; i < s.length; i++) answer.push(s.slice(i, s.length));
     return answer.sort();
 }
 
