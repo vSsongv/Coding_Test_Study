@@ -26,16 +26,17 @@
 function solution(nums, k) {
     let answer = [];
     let numHash = new Map();
-    for(let i = 0; i < k-1; i++) {
-        numHash.set(nums[i], (numHash.get(nums[i]) || 0) + 1); //map에 k개의 값을 setting해 둔다.
+    for (let i = 0; i < k - 1; i++) {
+        numHash.set(nums[i], (numHash.get(nums[i]) || 0) + 1); //map에 k-1개의 값을 setting해 둔다.
+        console.log(numHash);
     }
 
     let start = 0;
-    for(let end = k-1; end < nums.length; end++) {
+    for (let end = k - 1; end < nums.length; end++) {
         numHash.set(nums[end], (numHash.get(nums[end]) || 0) + 1); //k번째 값(k-1 index)까지의 값을 map에 넣고
         answer.push(numHash.size); //map의 사이즈를 answer에 push한다.
-        numHash.set(nums[start], (numHash.get(nums[start])-1)); //k개 중에 제일 앞의 것은 제외해주어야 하기 때문에, 1을 빼준다.
-        if(numHash.get(nums[start])===0) numHash.delete(nums[start]); //만약 값이 0이라면 그 값은 개수에 포함되면 안되므로 아예 delete해 준다.
+        numHash.set(nums[start], (numHash.get(nums[start]) - 1)); //k개 중에 제일 앞의 것은 제외해주어야 하기 때문에, 1을 빼준다.
+        if (numHash.get(nums[start]) === 0) numHash.delete(nums[start]); //만약 값이 0이라면 그 값은 개수에 포함되면 안되므로 map에서 아예 delete해 준다.
         start += 1;
     }
 
