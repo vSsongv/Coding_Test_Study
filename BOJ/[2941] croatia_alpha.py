@@ -1,6 +1,7 @@
 # https://www.acmicpc.net/problem/2941 [크로아티아 알파벳]
 
 import sys
+
 alpha = sys.stdin.readline()
 
 croatia_alpha = {
@@ -13,7 +14,7 @@ croatia_alpha = {
     "z=": 1
 }
 
-length = len(alpha)-1
+length = len(alpha) - 1
 
 tmp = ""
 for a in alpha:
@@ -34,7 +35,7 @@ for a in alpha:
             length -= croatia_alpha[tmp]
             tmp = ""
         else:
-            tmp = ""+tmp[-1]
+            tmp = "" + tmp[-1]
 
 print(length)
 
@@ -44,3 +45,12 @@ for t in a:
     alpha = alpha.replace(t, '*')
 
 print(len(alpha))
+
+# 아래 js
+# const fs = require('fs');
+# const input = fs.readFileSync('/dev/stdin').toString().trim();
+
+# var regex = /c\=|c\-|dz\=|d\-|lj|nj|s\=|z\=/g;
+# const result = input.replace(regex, ' ');
+
+# console.log(result.length);
