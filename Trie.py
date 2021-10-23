@@ -8,23 +8,23 @@ class Trie(object):
     def __init__(self):
         self.head = Node(None) #init
 
-    def insert(self, string):
+    def insert(self, word):
         current_node = self.head
 
-        for char in string:
+        for char in word:
             if char not in current_node.children:
                 current_node.children[char] = Node(char) #자식 node중 같은 문자가 없으면 Node새로 생성
             current_node = current_node.children[char] #자식 node에 값이 있으면 해당 node로 이동
-        current_node.data = string #문자열이 끝난 시점의 node의 data에 해당 string 입력
+        current_node.data = word #문자열이 끝난 시점의 node의 data에 해당 word 입력
 
-    def search(self, string):
+    def search(self, word):
         current_node = self.head
-        for char in string:
+        for char in word:
             if char in current_node.children: #childre에 해당 값이 있으면 해당 node로 이동.
                 current_node = current_node.children[char]
             else:
                 return False
-        #다 돌면 해당 string이 존재
+        #다 돌면 해당 word가 존재
         return True
 
     def starts_with(self, prefix):
