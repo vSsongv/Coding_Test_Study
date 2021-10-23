@@ -29,7 +29,7 @@ function solution(s, e) {
         while (queue.length) {
             let len = queue.length;
             for (let i = 0; i < len; i++) {
-                let x = queue.shift(); // 처음 값을 빼주고,
+                let x = queue.shift(); // queue의 처음 값을 빼주고,
                 for (let nx of [x - 1, x + 1, x + 5]) {
                     if (nx === e) return L + 1; //다음으로 이동할 위치가 동생이 있는 위치라면 현재  level(이동한 초) 리턴
                     if (nx > 0 && nx <= 10000 && checked[nx] === 0) { //확인하지 않은 경로라면 탐색.
@@ -44,5 +44,5 @@ function solution(s, e) {
     return move();
 }
 
-    console.log(solution(5, 17));
-     console.log(solution(8, 3));
+console.log(solution(5, 17));
+console.log(solution(8, 3));
