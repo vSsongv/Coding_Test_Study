@@ -10,10 +10,10 @@ let answer = 0, sum = 0;
 let right = 0;
 for (let left = 0; left < num; left++) {
     while (sum < target && right < num) {
-        sum += arr[right++];
+        sum += arr[right++]; //right 이동하면서 값 더해주기
     }
-    if (sum == target) answer += 1;
-    sum -= arr[left];
+    if (sum == target) answer += 1; //target num이랑 값 같아지면 answer +1
+    sum -= arr[left]; //ㅣleft index들의 합 sum에서 빼주기
 }
 
 console.log(answer);
