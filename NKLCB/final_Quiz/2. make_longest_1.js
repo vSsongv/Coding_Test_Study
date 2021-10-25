@@ -14,33 +14,21 @@
 
 function solution(nums, k) {
     var answer = 0;
-    let visited = [];
-    let cnt = 0;
-    let left = 0, right = 0;
-    while (right <= nums.length - 1) {
-        // if (nums[right++] === 0) visited.push(right); //right index를 list에 push.
-        if (nums[right++] === 0) cnt += 1; //right index를 list에 push.
-        if (cnt === k) { //만약 list 길이가 k와 같다면 k번 바꿔본 상태라는 것.
-            while (nums[right] !== 0 && right <= nums.length - 1) right += 1;
-            let comp = 0;
-            if (left !== 0) {
-                comp = (nums[left] === 0) ? right - left - 1 : right - left;
-            }
-            else if (right === nums.length - 1) comp = right - left + 1;
-            else comp = right - left;
-            answer = Math.max(answer, comp); //현재 answer와 지금 바꾼 최대 길이 중 큰 값을 answer로 해주고
-            cnt -= 1;
-            while (left <= nums.length - 1) {
-                left += 1; //left index 옮기기.
-                if (nums[left] === 0) break;
-            }
+    let cnt = 0; //1로 바꿔준 횟수
+    let left = 0;
+    for (let right = 0; right < nums.length; right++) {
+        if (nums[right] === 0) cnt += 1; //0을 만나면 cnt 증가
+        while (cnt > k) { //k 이상이 되면
+            if (nums[left] === 0) cnt -= 1; //cnt를 빼주고
+            left += 1; //left이동시켜야 함
         }
+        answer = Math.max(answer, right - left + 1); //가장 긴 개수는 계속 갱신 필요.
     }
     return answer;
 }
 
 console.log(solution([1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1], 2)); //9
-console.log(solution([0, 1, 0, 1, 1, 0], 2)); //6
-console.log(solution([1, 1, 1, 0, 0, 0, 0], 3)); //6
-console.log(solution([1, 0, 1, 0, 0, 1, 0, 1, 0], 2)); //4
-console.log(solution([0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0], 3)); //5
+// console.log(solution([0, 1, 0, 1, 1, 0], 2)); //5
+// console.log(solution([1, 1, 1, 0, 0, 0, 0], 3)); //6
+// console.log(solution([1, 0, 1, 0, 0, 1, 0, 1, 0], 2)); //4
+// console.log(solution([0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0], 3)); //5
