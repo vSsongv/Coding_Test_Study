@@ -7,11 +7,7 @@ function getMaxScore(moleInfo) {
     let time = new Map();
     for (let i = 0; i < moleInfo.length; i++) {
         for (let s of moleInfo[i]) {
-            if (time.has(moleInfo[i][s])) {
-                let score = time.get(moleInfo[i][s]);
-                time.set(s, Math.max(i + 1, score)); //Map에 해당 시간이 존재할 경우, 저장되어 있는 점수와 지금 점수를 비교해 더 큰 값을 넣어줍니다.
-            }
-            else time.set(s, i + 1); //초기 값으로 해당 초에 대한 첫 점수를 넣어줍니다.
+            time.set(s, Math.max(time.get(moleInfo[i][s]) || i + 1, i + 1));
         }
     }
     for (let [t, s] of time) {
@@ -20,5 +16,5 @@ function getMaxScore(moleInfo) {
     return answer;
 }
 
-console.log(getMaxScore([[1, 3, 5], [2, 4], [1, 2], [3]]));
+console.log(getMaxScore([[1, 3, 5], [2, 4], [1, 2], [3]])); //13
 console.log(getMaxScore([[1, 2, 4], [1, 6], [2, 5], [4], [3, 5]]));
