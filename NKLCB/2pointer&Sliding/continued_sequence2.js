@@ -30,8 +30,9 @@ function solution(nums, m) {
         sum += nums[i]; //sum에 nums[i]값을 더해주고
         if (sum === m) answer += 1;
         if (numHash.has(sum - m)) answer += numHash.get(sum - m);
-        //hash에 sum-m 한 값이 있다는 것은, sum에서 sum-m를 빼면 m이므로
-        //지금까지의 sum에서 sum-m을 제거한 애들로 val개만큼 m을 만들 수 있다는 의미.
+        //hash에 sum-m한 값이 있다는 것은 sum-(sum-m)을 하면 m을 만들 수 있다는 얘기니까, 
+        //해당 hash key의 val개수가 현재까지의 합에서 hash key를 뺐을 때(sum-m)을 했을 때
+        //m이 나올 수 있는 개수와 같기 때문에 answe에 더해준다.
         numHash.set(sum, (numHash.get(sum) || 0) + 1);
     }
     return answer;
