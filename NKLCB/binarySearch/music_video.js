@@ -25,9 +25,9 @@
 // 24
 
 function count(songs, capicity) {
-    let cnt = 1, sum = 0;
-    for(let time of songs) {
-        if(sum+time > capicity) { // 노래를 더한 시간이 cap보다 크면
+    let cnt = 1, sum = 0; //cnt가 1인 이유는 마지막 원소들을 check못하고 넘어갈수도 있기 때문.
+    for (let time of songs) {
+        if (sum + time > capicity) { // 노래를 더한 시간이 cap보다 크면
             sum = time; //sum을 현재 값부터 해서 더해줘야되고,
             cnt += 1; //한 테이프를 사용한것.
         }
@@ -44,16 +44,16 @@ function solution(songs, m) {
         right += ele; //노래 녹음에 걸리는 시간 전부 다 더한 값
     });
 
-    while(left < right) {
-        let mid = parseInt((left+right)/2);
-        if(count(songs, mid) <= m) { //계산된 테이프 개수가 m보다 작거나 같으면
+    while (left < right) {
+        let mid = parseInt((left + right) / 2);
+        if (count(songs, mid) <= m) { //계산된 테이프 개수가 m보다 작거나 같으면
             answer = mid; //일단 답이 될 수 있고
-            right = mid-1; //더 줄일 수 있는지 보기 위해 right값 update.
+            right = mid - 1; //더 줄일 수 있는지 보기 위해 right값 update.
         }
-        else left = mid+1; //left값을 update해서 지금 mid값보다 오랜 시간으로 녹음하기
+        else left = mid + 1; //left값을 update해서 지금 mid값보다 오랜 시간으로 녹음하기
     }
     return answer;
 }
 
-console.log(solution([6, 5, 8, 5, 6, 8, 7, 6, 6, 7], 3));
+// console.log(solution([6, 5, 8, 5, 6, 8, 7, 6, 6, 7], 3));
 console.log(solution([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
