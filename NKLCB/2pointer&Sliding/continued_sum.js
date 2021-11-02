@@ -22,34 +22,37 @@
 // ▣ 반환값 형식 3
 // 3
 
-function solution(num) {
-    let nums = [];
-    let answer = 0, sum = 0, left = 0;
-    for(let i = 0; i < Math.ceil(num/2); i++) {
-        nums[i] = i+1;
-    }
-    for (let right = 0; right < nums.length; right++) {
-        sum += nums[right]; //sum에 end까지의 값을 더해주고,
-        while (sum > num) {
-            sum -= nums[left++];
-        }
-        if (sum === num) answer += 1;
-    }
-    return answer;
-}
+// function solution(num) {
+//     let nums = [];
+//     let answer = 0, sum = 0, left = 0;
+//     for (let i = 0; i < Math.ceil(num / 2); i++) {
+//         nums[i] = i + 1; //num의 중간까지만 체크하면 된다.
+//     }
+//     for (let right = 0; right < nums.length; right++) {
+//         sum += nums[right]; //sum에 right까지의 값을 더해주고,
+//         while (sum > num) {  //sum이 num보다 커지면
+//             sum -= nums[left++]; //작아질때까지 left를 이동시키면서 빼준다.
+//         }
+//         if (sum === num) answer += 1; //sum과 num이 같아지면 답 체크
+//     }
+//     return answer;
+// }
 
 function solution(num) {
     let answer = 0;
     cnt = 1;
     num -= 1;
-    while(num > 0) { //num이 0보다 큰 경우에,
+    while (num > 0) { //num이 0보다 큰 경우에,
         cnt++; //해당 숫자를 cnt개의 합으로 표현할지를 정해서
         num -= cnt; //num에서 cnt개를 빼준 후
-        if(num % cnt == 0) answer += 1; //만약 cnt개로 나눈 값을 똑같이 나눠줄 수 있으면 num을 만들 수 있음.
+        if (num % cnt == 0) {
+            answer += 1; //만약 cnt개로 나눈 값을 똑같이 나눠줄 수 있으면 num을 만들 수 있음.
+        }
     }
     return answer;
 }
 
-console.log(solution(15));
-console.log(solution(45678));
-console.log(solution(98765));
+console.log(solution(6));
+// console.log(solution(17));
+// console.log(solution(45678));
+// console.log(solution(98765));
