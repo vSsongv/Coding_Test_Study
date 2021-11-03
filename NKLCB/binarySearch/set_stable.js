@@ -20,8 +20,8 @@
 
 function isValid(stable, dist) { //dist 만큼 차이를 뒀을 때 말을 c마리 둘 수 있는지
     let cnt = 1, point = stable[0];
-    for(let i = 1; i < stable.length; i++) {
-        if(stable[i] - point >= dist) { //두 말의 위치의 차이가 dist보다 크거나 같으면
+    for (let i = 1; i < stable.length; i++) {
+        if (stable[i] - point >= dist) { //두 말의 위치의 차이가 dist보다 크거나 같으면
             cnt += 1; //말을 둘 수 있음
             point = stable[i]; //다음 포인트와의 차이 보기
         }
@@ -30,17 +30,17 @@ function isValid(stable, dist) { //dist 만큼 차이를 뒀을 때 말을 c마�
 }
 
 function solution(stables, c) {
-    stables.sort((a,b) => a-b);
+    stables.sort((a, b) => a - b);
     let left = 1;
     let right = Math.max(...stables);
 
-    while(left<=right){
-        let mid=parseInt((left+right)/2);
-        if(isValid(stables, mid)>=c){
-            answer=mid;
-            left=mid+1;
+    while (left <= right) {
+        let mid = parseInt((left + right) / 2);
+        if (isValid(stables, mid) >= c) { //말을 c마리보다 더 넣을 수 있으면 거리 좀 더 늘려서 놓을 수 있다는 얘기!
+            answer = mid;
+            left = mid + 1;
         }
-        else right=mid-1;
+        else right = mid - 1;
     }
     return answer;
 }
