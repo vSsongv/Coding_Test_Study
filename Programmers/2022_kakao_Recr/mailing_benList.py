@@ -22,7 +22,6 @@ def solution(id_list, report, k):
     for re in id_dict:
         for ed in id_dict[re]:
             reported_dict[ed] += 1
-
     for key, val in reported_dict.items():
         if val >= k:
             ben_list.append(key)
@@ -31,8 +30,11 @@ def solution(id_list, report, k):
         for re, ed in id_dict.items():
             if ben in ed:
                 mail[re] += 1
-
+    
     for val in mail.values():
         answer.append(val)
 
     return answer
+
+# print(solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"], 2))
+print(solution(["con", "ryan", "ryan", "con"], ["ryan con", "ryan con", "ryan con", "ryan con"], 3))
