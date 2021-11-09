@@ -20,15 +20,13 @@
 // ▣ 반환값 형식 1
 // 7
 
-function solution(n,k) {
-    let answer = [];
-    let Queue = Array.from({length:n}, (v, i)=>i+1); //1부터 n까지 gueue에 넣는다.
-    while(Queue.length) { //queue가 존재한다면
-        for(let i = 1; i < k; i++) Queue.push(Queue.shift()); //불린 애 앞에 애들은 다시 queue에 들어와야함(k보다 작을 때까지)
+function solution(n, k) {
+    let Queue = Array.from({ length: n }, (v, i) => i + 1); //1부터 n까지 gueue에 넣는다.
+    while (Queue.length !== 1) { //queue가 존재한다면
+        for (let i = 1; i < k; i++) Queue.push(Queue.shift()); //불린 애 앞에 애들은 다시 queue에 들어와야함(k보다 작을 때까지)
         Queue.shift(); //불린 애 제거.
-        if(Queue.length === 1) answer = Queue.pop(); //마지막에 남은 한명이 구하러 감.
     }
-    return answer;
+    return Queue[0];
 }
 
-console.log(solution(8,3));
+console.log(solution(5, 2));
