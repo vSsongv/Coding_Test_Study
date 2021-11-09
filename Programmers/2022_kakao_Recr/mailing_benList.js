@@ -23,7 +23,7 @@ function solution(id_list, report, k) {
             reported_dict[ed] += 1;
         }
     }
-    console.log(reported_dict)
+
     for (let [key, val] of Object.entries(reported_dict)) {
         if (val >= k) {
             ben_list.push(key);
@@ -32,7 +32,6 @@ function solution(id_list, report, k) {
 
     for (let ben of ben_list) {
         for (let [re, ed] of Object.entries(id_dict)) {
-            console.log(re, ed)
             if (ed.includes(ben)) {
                 mail[re] += 1;
             }
@@ -45,5 +44,5 @@ function solution(id_list, report, k) {
     return answer;
 }
 
-// console.log(solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"], 2))
-console.log(solution(["con", "ryan", "ryan", "con"], ["ryan con", "ryan con", "ryan con", "ryan con"], 3));
+console.log(solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"], 2))
+// console.log(solution(["con", "ryan", "ryan", "con"], ["ryan con", "ryan con", "ryan con", "ryan con"], 3));
