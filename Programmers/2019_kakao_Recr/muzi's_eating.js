@@ -27,16 +27,41 @@ function solution(food_times, k) {
         sumOfTime = differ * (foodNum - t); //현재 시간을 뒤의 모든 값에서 한번씩 빼줘야 함.
         if (k < sumOfTime) { //shutdowned before eat all food
             priority = priority.slice(t); //현재 index부터 다 잘라낸다.
-            console.log(priority);
             priority.sort(function (a, b) { //원래 인덱스 순서대로 돌려놓고,
                 return a - b;
             });
-            console.log(priority);
             return priority[k % (foodNum - t)]; //내가 이제 먹어야 되는 음식은 k % foodNum한 index값.
         }
         k -= sumOfTime; //update k
     }
     return -1; //ate all food before shut down.
 }
+
+function solution(times, k) {
+    times.unshift(0);
+    let sT = times.slice();
+    sT.sort((a, b) => a - b);
+    let rest = times.length - 1;
+    for (let i = 1; i < sT.length; i++) {
+        if (k < (rest * (sT[i] - sT[i - 1]))) {
+            let idx = k % rest;
+            let cnt = 0;
+            for (let j = 1; j < times.length; j++) {
+                if (times[j] >= sT[i]) {
+                    if (cnt == idx) {
+                        return j;
+                    }
+                    cnt++;
+                }
+            }
+        }
+        else {
+            k -= (rest * (sT[i] - sT[i - 1]));
+            rest--;
+        }
+    }
+    return -1;
+}
+
 
 console.log(solution([7, 5, 10, 3, 32, 41, 26, 30, 28], 7));
