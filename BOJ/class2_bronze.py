@@ -44,20 +44,33 @@
 # print(sum)
 
 # https://www.acmicpc.net/problem/11050 [이항 계수]
+# import sys
+
+# N,K = map(int,sys.stdin.readline().split())
+# top = 1
+# bottom = 1
+# minus = 1
+# for n in range(N,0,-1):
+#     top *= n
+# for k in range(K,0,-1):
+#     bottom *= k
+# for m in range(N-K,0,-1):
+#     minus *= m
+
+# print(int(top / (bottom * minus)))
+
+# https://www.acmicpc.net/problem/10250 [ACM 호텔]
+
 import sys
+n = int(input())
 
-N,K = map(int,sys.stdin.readline().split())
-top = 1
-bottom = 1
-minus = 1
-for n in range(N,0,-1):
-    top *= n
-for k in range(K,0,-1):
-    bottom *= k
-for m in range(N-K,0,-1):
-    minus *= m
-
-print(int(top / (bottom * minus)))
-
+for i in range(n):
+    H, W, N  = map(int,sys.stdin.readline().split())
+    num = N / H + 1
+    floor = N % H
+    if N % H == 0:  # h의 배수이면,
+        num = N/H
+        floor = H
+    print(int(floor*100+num))
 
 
