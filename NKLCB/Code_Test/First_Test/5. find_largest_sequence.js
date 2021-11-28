@@ -15,38 +15,59 @@
 // 5
 // 출력설명 : 최대길이 등차수열은 [25, 20, 15, 10, 5]입니다.
 
+// function solution(nums) {
+//     let answer = 0;
+//     let len = nums.length;
+//     let dp = new Array(len + 1);
+//     for (let i = 0; i < dp.length; i++) {
+//         dp[i] = new Array(len + 1).fill(0);
+//     }
+//     for (let i = 0; i < len; i++) {
+//         dp[i][i] = 1;
+//     }
+//     for (let i = 0; i < len; i++) {
+//         for (let j = i + 1; j < len; j++) {
+//             let diff = nums[j] - nums[i];
+//             dp[i][j] = 2;
+//             let cur = nums[i];
+//             let cnt = 1;
+//             for (let k = i - 1; k >= 0; k--) {
+//                 if (nums[k] === cur - diff) {
+//                     dp[k][j] = cnt + dp[i][j];
+//                     cur = nums[k];
+//                     cnt++;
+//                 }
+//             }
+//         }
+//     }
+//     for (let i = 0; i < len; i++) {
+//         for (let j = 0; j < len; j++) {
+//             answer = Math.max(answer, dp[i][j]);
+//         }
+//     }
+//     return answer;
+// }
+
 function solution(nums) {
-    let answer = 0;
-    let len = nums.length;
-    let dp = new Array(len + 1);
-    for (let i = 0; i < dp.length; i++) {
-        dp[i] = new Array(len + 1).fill(0);
-    }
-    for (let i = 0; i < len; i++) {
-        dp[i][i] = 1;
-    }
-    for (let i = 0; i < len; i++) {
-        for (let j = i + 1; j < len; j++) {
-            let diff = nums[j] - nums[i];
-            dp[i][j] = 2;
-            let cur = nums[i];
-            let cnt = 1;
-            for (let k = i - 1; k >= 0; k--) {
-                if (nums[k] === cur - diff) {
-                    dp[k][j] = cnt + dp[i][j];
-                    cur = nums[k];
-                    cnt++;
+    // [길이, 공차]
+    let dp = Array.from({ length: nums.length }, () =>
+        Array(nums.length).fill(2)
+    );
+
+    let diff = 0,
+        max = 0;
+    for (let i = 2; i < nums.length; i++) {
+        for (let j = i - 1; j >= 0; j--) {
+            diff = Math.abs(nums[i] - nums[j]);
+            for (let k = j - 1; k >= 0; k--) {
+                if (Math.abs(nums[j] - nums[k]) === diff) {
+                    dp[i][j] = dp[j][k] + 1;
+                    max = Math.max(dp[i][j], max);
                 }
             }
         }
     }
-    console.log(dp);
-    for (let i = 0; i < len; i++) {
-        for (let j = 0; j < len; j++) {
-            answer = Math.max(answer, dp[i][j]);
-        }
-    }
-    return answer;
+    return max;
 }
 
 console.log(solution([25, 20, 15, 30, 10, 40, 5]));
