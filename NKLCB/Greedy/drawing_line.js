@@ -20,20 +20,20 @@
 
 function solution(nums) {
     let answer = 0;
-    nums.sort((a,b) => a[0] - b[0]);
+    nums.sort((a, b) => a[0] - b[0]);
     let start = nums[0][0];
     let end = nums[0][1];
-    for(let i = 1; i < nums.length; i++) {
-        if(nums[i][0] <= end && nums[i][1] > end) { //앞의 구간과 겹친다면
-            nums[i][0] = nums[i-1][0]; //현재 좌표의 x좌표만 바꿔줌
-        } 
-        else if(nums[i][0] > end){ //겹치지 않는다면
-            answer += (end-start); //asnwer에 앞의 구간 길이를 더해줌
-            start = nums[i][0]; 
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i][0] <= end && nums[i][1] > end) { //앞의 구간과 겹친다면
+            end = nums[i][1]; //현재 좌표의 x좌표만 바꿔줌
+        }
+        else if (nums[i][0] > end) { //겹치지 않는다면
+            answer += (end - start); //asnwer에 앞의 구간 길이를 더해줌
+            start = nums[i][0];
             end = nums[i][1];
         }
         //포함되는 경우 넘어가면 됨.
-    }   
+    }
     answer += (end - start);
     return answer; //마지막 좌표값끼리의 길이 더해야 함
 }
