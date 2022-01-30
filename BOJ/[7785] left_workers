@@ -1,22 +1,20 @@
 // https://www.acmicpc.net/problem/7785 [회사에 남아 있는 사람]
 
-// const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-let input = require("fs").readFileSync("input.txt").toString().trim().split("\n");
+const input = require('fs')
+    .readFileSync(
+        process.platform === 'linux' ? 'dev/stdin' : 'input.txt'
+    )
+    .toString()
+    .trim()
+    .split('\n');
 
 const workers = input.slice(1);
-let leftWorkersMap = new Map();
+let leftWorkers = new Map();
 
 workers.forEach((worker) => {
-    const name = worker.split(' ')[0].trim();
-    const status = worker.split(' ')[1].trim();
-    if(status === 'leave') leftWorkersMap.delete(name)
-    else leftWorkersMap.set(name, 'working');
+    const [name, status] = worker.split(' ');
+    if(status.trim() === 'leave') leftWorkers.delete(name);
+    else leftWorkers.set(name, 'working');
 });
 
-let leftWorkers = [];
-
-leftWorkersMap.forEach((val, key) =>
-    leftWorkers = [...leftWorkers, key]
-);
-
-console.log(leftWorkers.sort().join('\n'))
+console.log([...leftWorkers.keys()].sort().reverse().join('\n'));
