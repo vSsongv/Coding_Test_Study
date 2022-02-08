@@ -1,8 +1,8 @@
 // https://www.acmicpc.net/problem/1316 [그룹 단어 체커]
 
 let fs = require('fs');
-// let input = fs.readFileSync('/dev/stdin').toString().split('\n');
-let input = fs.readFileSync('./input.txt').toString().split('\n');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let input = fs.readFileSync('./input.txt').toString().split('\n');
 
 const stringsNum = Number(input[0]);
 let groupWordNum = 0;
