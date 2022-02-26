@@ -10,24 +10,24 @@
 // 가방의 저장무게는 1000kg을 넘지 않는다. 보석의 개수는 30개 이내이다.
 // ▣ 출력설명
 // 가방에 담을 수 있는 보석의 최대가치를 출력한다.
-// ▣ 입력예제 1
+// ▣ 입력예제 1 
 // [[5, 12], [3, 8], [6, 14], [4, 7]], 11
 // ▣ 출력예제 1
 // 28
 // 해설 : 5g 1개, 3g 2개를 선택해서 28가치가 최대이다.
 
-function solution() {
+function solution(nums, m) {
     let answer = 0;
     let dp = Array(m + 1).fill(0);
-
+    //dp[i]의 값은 i의 무게 만큼 가방을 채웠을 떼 가능한 최대 가치.
     for (let i = 0; i < nums.length; i++) {
-        for (let j = nums[i][0]; j <= m; j++) {
-            dp[j] = Math.max(dp[j], dp[j - nums[i][0]] + nums[i][1]);
+        for (let j = nums[i][0]; j <= m; j++) { //지금 넣을 무게를 m보다 작을 때까지 최대로 넣어보기 
+            dp[j] = Math.max(dp[j], dp[j - nums[i][0]] + nums[i][1]); //현재 축적된 가치와 새로운 가치를 비교해서 큰 값으로 update.
         }
     }
     answer = dp[m];
     return answer;
 }
 
-console.log([[5, 12], [3, 8], [6, 14], [4, 7]], 11);
+console.log(solution([[5, 12], [3, 8], [6, 14], [4, 7]], 11));
 
