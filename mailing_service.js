@@ -1,4 +1,5 @@
-// 견적서를 다 다르게 작성하는데 데이터가 모이지를 않으니까, 데이터를 관리할 수 있게 드라이브에 업로드하는 방법을 생각.   그리고 견적서를 받아야 하는 업체에 견적서를 보내야 하니까 자동 메일링 방법 채택.
+// 견적서를 다 다르게 작성하는데 데이터가 모이지를 않으니까, 데이터를 관리할 수 있게 드라이브에 업로드하는 방법을 생각.   
+// 그리고 견적서를 받아야 하는 업체에 견적서를 보내야 하니까 자동 메일링 방법 채택.
 // 사업관리팀의 도움요청
 
 function sheetName() {
@@ -39,7 +40,7 @@ function sendmail() {
         '&pagenumbers=false&gridlines=false' + // 페이지 번호, 그리드 라인 : false
         '&fzr=false' + // 열 헤더 반복 : false
         gidName ; // 시트 Id.
-    // 메일 제목 : 학기, 학생이름 ...
+  
       const colL = ["L10","L11","L12","L13","L14","L15","L16","L17","L18","L19","L20"]
       const subject = ss.getActiveSheet().getRange("L8").getValue().toString();
       let body = ss.getActiveSheet().getRange(colL[0]).getValue().toString() + '<br>';
