@@ -15,21 +15,22 @@
 
 function solution(nums, k) {
     let left = 0;
-    let right = nums.length-1;
+    let right = nums.length - 1;
     let answer = 0;
 
-    while(left <= right) {
-        let mid = parseInt((left+right)/2);
-        if(nums[mid] - mid - 1 < k) {  //nums[i]값에서 index를 뺀 값이 0이 아니면 제대로 된 index에 위치하지 않은 것. 
+    while (left <= right) {
+        let mid = parseInt((left + right) / 2);
+        if (nums[mid] - mid - 1 < k) { //nums[mid] - mid - 1은 해당 값 앞에 없는 수 개수
+            //nums[i]값에서 index를 뺀 값이 0이 아니면 제대로 된 index에 위치하지 않은 것.
             //nums[mid] - mid - 1값이 k보다 작으면 k번째 애는 현재 mid보다 큰 값중에 있다.
             left = mid + 1;
         }
-        else right = mid - 1; //아니라면 right보다 앞의 값에 있다.
-    }       
-    console.log("g",left);
-    answer = left+k;
+        else right = mid - 1; //아니라면 mid보다 앞의 값에 있다.
+        console.log(left);
+    }
+    answer = left + k;
     return answer;
 }
 
 console.log(solution([2, 5, 7, 9, 12], 6));
-console.log(solution([2, 3, 4, 7, 11], 5)); //9
+// console.log(solution([2, 3, 4, 7, 11], 5)); //9
