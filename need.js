@@ -64,11 +64,11 @@ const ordered = {}
 // });
 console.log(JSON.stringify(ordered));
 
-//   **split -** string.split('**기준**') : 기준을 기준으로 잘라서 배열로 넘겨준다. ****
+// split - string.split('기준값') : string을 기준값으로 잘라서 배열로 넘겨준다. ****
 
-// **substring -** string.substring('**startIdx**', '**endIdx**') : startIdx부터, endIdx 전까지 자른다. startIdx만 넣으면 startIdx부터 맨 끝까지 자른다.
+// substring - string.substring('**startIdx**', '**endIdx**') : startIdx부터, endIdx 전까지 자른다. startIdx만 넣으면 startIdx부터 맨 끝까지 자른다.
 
-// **slice** - string.slice('**startIdx**', '**endIdx**') : dIdx 미포함으로, 얕은 복사본을 새로운 배열 객체로 반환한다.
+// slice - string.slice('**startIdx**', '**endIdx**') : endIdx 미포함으로, 얕은 복사본을 새로운 배열 객체로 반환한다.
 
 let arr = [...lh].sort(function (a, b) {
     return (a[1] > b[1] ? -1 : a[1] < b[1] ? 1 : 0) || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
