@@ -12,15 +12,14 @@
 
 function solution(s) {
     let check = [];
-    for(let i = 0; i < s.length; i++) {
-        if(s[i] == "(") check.push(s[i]);
-        else if(check[check.length-1] == "(") {
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] == "(") check.push(s[i]);
+        else if (check[check.length - 1] == "(") {
             check.pop();
         }
         else check.push(s[i]);
-        console.log(check);
     }
-    if(check.length != 0) return "NO";
+    if (check.length != 0) return "NO";
     else return "YES";
 }
 
