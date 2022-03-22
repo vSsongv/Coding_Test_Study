@@ -1,4 +1,8 @@
-# nc_soft
+# nc_soft 요청건에 대하여 총 3가지 version의 instance segmentation을 진행
+# 1. Gray scale
+# 2. Polygon
+# 3. Color
+
 color_code = {
     '1': ["#800000", "#8B0000", "#A52A2A", "#B22222", "#DC143C", "#FF0000", "#FF6347",
           "#FF7F50", "#CD5C5C", "#F08080"],  # 사람
