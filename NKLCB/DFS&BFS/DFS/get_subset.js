@@ -11,21 +11,20 @@
 // [[1, 2, 3], [1, 2], [1, 3], [1], [2, 3], [2], [3]]
 
 function solution(n) {
-    let answer = [];
-    let subset = []
-    function getSubset(e) {
-        if(e === n+1) {
-            answer.push(subset.slice());
-        }
-        else {
-            subset.push(e);
-            getSubset(e+1);
-            subset.pop();
-            getSubset(e+1);
-        }
+  let answer = [];
+  let subset = [];
+  function getSubset(e) {
+    if (e === n + 1) {
+      if (subset.length !== 0) answer.push(subset.slice());
+    } else {
+      subset.push(e);
+      getSubset(e + 1);
+      subset.pop();
+      getSubset(e + 1);
     }
-    getSubset(1);
-    return answer;
+  }
+  getSubset(1);
+  return answer;
 }
 
 console.log(solution(3));
