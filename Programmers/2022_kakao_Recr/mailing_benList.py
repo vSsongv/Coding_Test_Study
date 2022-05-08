@@ -1,4 +1,4 @@
-# 2022 KAKAO BLIND RECRUITMENT 1번
+#programmers.co.kr/learn/courses/30/lessons/92334 [신고 결과 받기]
 
 def solution(id_list, report, k):
     answer = []
