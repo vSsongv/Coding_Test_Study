@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="fruits">
+      <li class="apple">Apple</li>
+      <li class="banana">Banana</li>
+      <li class="orange">Orange</li>
+    </ul>
+    <script>
+      const $fruits = document.getElementById('fruits');
+
+      console.log($fruits.childNodes);
+      // NodeList(7) [text, li.apple, text, li.banana, text, li.orange. text]
+      console.log($fruits.children);
+      // HTMLCollection(3) [li.apple, li.banana, li.orange]
+
+      console.log($fruits.firstChild); // #text
+      console.log($fruits.firstElementChild); // li.apple
+
+      console.log($fruits.lastChild); // #text
+      console.log($fruits.lastElementChild); // li.orange
+
+      const $banana = document.querySelector('.banana');
+
+      console.log($fruits.contains($banana));
+    </script>
+  </body>
+</html>

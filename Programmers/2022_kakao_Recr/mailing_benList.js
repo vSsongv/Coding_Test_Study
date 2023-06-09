@@ -12,6 +12,7 @@ https: function solution(id_list, report, k) {
     reported_dict[ID] = 0;
     mail[ID] = 0;
   }
+  console.log(id_dict, reported_dict, mail);
 
   for (let re of report) {
     let tmp = re.split(' ');
@@ -39,6 +40,7 @@ https: function solution(id_list, report, k) {
       }
     }
   }
+  console.log(id_dict, reported_dict, mail);
 
   for (let [k, v] of Object.entries(mail)) {
     answer.push(v);

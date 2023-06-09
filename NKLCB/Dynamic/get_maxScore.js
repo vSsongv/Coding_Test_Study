@@ -17,9 +17,9 @@ function solution(nums, m) {
     let dy = Array(m + 1).fill(0);
     for (let i = 0; i < nums.length; i++) {
         let score = nums[i][0]; //
-        let point = nums[i][1];
-        for (let j = m; j >= point; j--) { //뒤에서부터 돌면서
-            dy[j] = Math.max(dy[j], dy[j - point] + score); //dp배열의 현재 값과 [마지막 index-point]의 indexd의 값에 score를 더한 값과 비교하여 더 큰 점수를 넣어준다.
+        let time = nums[i][1];
+        for (let j = m; j >= time; j--) { //뒤에서부터 돌면서
+            dy[j] = Math.max(dy[j], dy[j - time] + score); //dp배열의 현재 값과 [마지막 index-time]의 index의 값에 score를 더한 값과 비교하여 더 큰 점수를 넣어준다.
         }
     }
     answer = dy[m];

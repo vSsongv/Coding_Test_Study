@@ -14,13 +14,13 @@ function solution1(n, m) {
     let answer = [];
     let tmp = [];
     function permutation(l) {
-        if(l === m) {
+        if (l === m) {
             answer.push(tmp.slice());
         }
         else {
-            for(let i = 0; i <= n; i++) {
+            for (let i = 1; i <= n; i++) {
                 tmp.push(i);
-                permutation(l+1);
+                permutation(l + 1);
                 tmp.pop();
             }
         }
@@ -48,15 +48,15 @@ function solution2(nums, m) {
     let tmp = [];
     let check = Array(nums.length).fill(0);
     function permutation(l) {
-        if(l === m) {
+        if (l === m) {
             answer.push(tmp.slice());
         }
         else {
-            for(let i = 0; i <= nums.length; i++) {
-                if(check[i] === 0) {
+            for (let i = 0; i < nums.length; i++) {
+                if (check[i] === 0) {
                     check[i] = 1;
                     tmp.push(nums[i]);
-                    permutation(l+1);
+                    permutation(l + 1);
                     check[i] = 0;
                     tmp.pop();
                 }
@@ -67,4 +67,4 @@ function solution2(nums, m) {
     return answer;
 }
 
-console.log(solution2([3, 6, 9], 3));
+console.log(solution2([3, 6, 9], 2));

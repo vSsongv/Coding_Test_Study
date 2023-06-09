@@ -68,6 +68,7 @@ function solution(n, m, arr) {
     for (let k = 0; k < n + 1; k++) {
         if (table[k][n] > 0) answer.push([k, table[k][n]])
     }
+    console.log(table)
     return answer;
 }
 

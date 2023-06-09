@@ -1,8 +1,15 @@
+const inputs = require('fs')
+  .readFileSync(
+    process.platform === 'linux' ? 'dev/stdin' : 'input.txt'
+  )
+  .toString()
+  .trim()
+  .split('\n');
+
 //백준제출시 주석
 // let Path = "input.txt"
 //로컬 테스트시 주석
 let Path = "/dev/stdin"
-const [num, target, ...arr] = require("fs").readFileSync(Path).toString().trim().split(/\s/).map(v => +v);
 // --------------------------------------------------------------
 const fs = require('fs');
 let input = fs.readFileSync(Path).toString().trim().split('\n');
@@ -15,6 +22,9 @@ const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('
 
 // 3. 여러 줄의 값들을 입력받을 때
 const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
+let n = parseInt(input[0].split(" ")[0]);
+let target = parseInt(input[0].split(" ")[1]);
+let arr = input[1].split(" ").map(Number);
 
 // 4. 첫 번째 줄에 자연수 n을 입력받고, 그 다음줄에 공백으로 구분된 n개의 값들을 입력받을 때
 const [n, ...arr] = require('fs').readFileSync('/dev/stdin').toString().trim().split(/\s+/);

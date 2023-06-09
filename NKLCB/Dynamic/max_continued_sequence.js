@@ -15,20 +15,20 @@
 //수열도 출력해보기, 반대로 돌면서 max값부터 하나씩 뺴주면서 answer 배열에 push 하고 마지막에 배열 값 reverse해서 출력하면 가능
 
 function solution(nums) {
-    let dp = new Array(nums.length).fill(1);
-    dp[0] = 1;
-    let cnt = 1;
-    let max = nums[0];
-
-    for(let i = 1; i < nums.length; i++) {
-        if(nums[i] > max) {
-            cnt += 1;
-            dp[i] = cnt;
-            max = nums[i];
+    let answer = 0;
+    let dy = Array.from({ length: nums.length }, () => 0);
+    dy[0] = 1;
+    for (let i = 1; i < nums.length; i++) {
+        let max = 0;
+        for (let j = i - 1; j >= 0; j--) {
+            if (nums[j] < nums[i] && dy[j] > max) {
+                max = dy[j];
+            }
         }
+        dy[i] = max + 1;
+        answer = Math.max(answer, dy[i]);
     }
-    return Math.max(...dp);
+    return answer;
 }
-
 console.log(solution([5, 3, 7, 8, 6, 2, 9, 4]));
 console.log(solution([2, 7, 5, 8, 6, 4, 7, 12, 3]));

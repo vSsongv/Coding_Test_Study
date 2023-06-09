@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="class1_add_some_code" />
+    <list default="true" id="cb9b5042-cd0d-4fbf-85de-ffc812608f65" name="Default Changelist" comment="done!">
+      <change beforePath="$PROJECT_DIR$/.idea/Study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Study.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOJ/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOJ/js_input_way.js" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/js_input_way.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dijkstra.js" beforeDir="false" afterPath="$PROJECT_DIR$/Dijkstra.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NKLCB/2pointer&amp;Sliding/continued_sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/NKLCB/2pointer&amp;Sliding/continued_sum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NKLCB/2pointer&amp;Sliding/find_all_anagram.js" beforeDir="false" afterPath="$PROJECT_DIR$/NKLCB/2pointer&amp;Sliding/find_all_anagram.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NKLCB/Dynamic/get_maxScore.js" beforeDir="false" afterPath="$PROJECT_DIR$/NKLCB/Dynamic/get_maxScore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NKLCB/Stack&amp;Queue/Stack/correct_bracket.js" beforeDir="false" afterPath="$PROJECT_DIR$/NKLCB/Stack&amp;Queue/Stack/correct_bracket.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -37,10 +48,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python39" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
-    <configuration name="that_song" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="python" type="PythonConfigurationType" factoryName="Python">
       <module name="Study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,12 +60,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Programs/Python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/that_song.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Programs/Python/Python39" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -62,11 +74,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.that_song" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -244,7 +251,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625155285402</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="done!">
+      <created>1635011993604</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1635011993604</updated>
+    </task>
+    <task id="LOCAL-00023" summary="done!">
+      <created>1635518503198</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1635518503198</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +298,7 @@
     <MESSAGE value="mailing_service_code" />
     <MESSAGE value="need to CS study :(" />
     <MESSAGE value="-ing" />
-    <option name="LAST_COMMIT_MESSAGE" value="-ing" />
+    <MESSAGE value="done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="done!" />
   </component>
 </project>

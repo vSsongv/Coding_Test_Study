@@ -34,21 +34,22 @@ function solution(n, arr) {
     let indegrees = Array(n + 1).fill(0);
 
     for (let [from, to] of arr) {
-        graph[from].push(to);
-        indegrees[to] += 1;
+        graph[from].push(to); //시작점 index에 끝 점 index를 저장.
+        indegrees[to] += 1; //끝 점이 몇 개의 entry를 가지고 있는지 저장.
     }
-    let qeueu = [];
-    for (let i = 1; i < n + 1; i++) {
-        if (indegrees[i] === 0) qeueu.push(i);
-    }
-    console.log(qeueu);
-    while (qeueu.length) {
-        let curr = qeueu.shift();
-        answer.push(curr);
 
-        for (let next of graph[curr]) {
-            indegrees[next]--;
-            if (indegrees[next] === 0) qeueu.push(next);
+    let queue = [];
+    for (let i = 1; i < n + 1; i++) {
+        if (indegrees[i] === 0) queue.push(i); //들어오는 entry가 없는 애부터 시작. 걔네부터 바로 시작할 수 있기 때문.
+    }
+
+    while (queue.length) {
+        let curr = queue.shift(); //시작해야되는 애를 꺼내고, 
+        answer.push(curr);
+        for (let next of graph[curr]) { //다음에 해야 될 애들을 꺼내서,
+            indegrees[next]--; //entry 하나 감소
+            if (indegrees[next] === 0) queue.push(next); //entry가 하나 없어졌으니 해당 점부터 시작할 수 있는 상태가 됨.
+            console.log(queue)
         }
     }
     return answer;
